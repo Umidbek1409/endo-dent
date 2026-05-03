@@ -289,3 +289,184 @@ img[src$=".svg"] {
     background-color: #1e40af !important;
     color: #ffffff !important;
 }
+
+/* ── Mobile Responsive Fixes for Admin ── */
+@media (max-width: 768px) {
+    /* Dashboard stat cards: stack properly */
+    .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Quick links: stack on mobile */
+    .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Stat card: horizontal layout on mobile */
+    .flex.flex-col.gap-6 > div:first-child h1 {
+        font-size: 1.25rem !important;
+    }
+
+    /* Dashboard stat number: smaller on mobile */
+    .text-3xl.font-bold {
+        font-size: 1.5rem !important;
+    }
+
+    .text-3xl.material-symbols-outlined,
+    span.material-symbols-outlined.text-3xl {
+        font-size: 1.75rem !important;
+    }
+
+    /* Stat card padding */
+    .bg-white.dark\:bg-gray-800.border.rounded-lg.p-5 {
+        padding: 0.75rem !important;
+    }
+
+    /* Table: enable horizontal scroll */
+    .overflow-x-auto {
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* Action buttons: smaller on mobile */
+    .action-btn {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .action-btn .material-symbols-outlined {
+        font-size: 16px !important;
+    }
+
+    /* Status badge: smaller */
+    .status-badge {
+        font-size: 10px !important;
+        padding: 3px 6px !important;
+    }
+
+    /* Reduce sidebar width on mobile */
+    .app-unfold .sidebar {
+        width: 60px !important;
+    }
+
+    /* Fieldset labels: smaller */
+    fieldset .field-label {
+        font-size: 0.8rem !important;
+    }
+
+    /* Text inputs: proper sizing */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+
+    /* Form field padding: reduce on mobile */
+    .form-row {
+        padding: 0.5rem 0 !important;
+    }
+
+    /* Submit row: stack buttons */
+    .submit-row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .submit-row input,
+    .submit-row button {
+        width: 100% !important;
+    }
+
+    /* Search bar: full width */
+    #searchbar {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Object tools: stack */
+    .object-tools {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+    }
+
+    /* Breadcrumbs: wrap */
+    .breadcrumbs {
+        padding: 10px 16px !important;
+    }
+
+    .breadcrumbs ul {
+        flex-wrap: wrap !important;
+    }
+
+    /* Recent actions sidebar: hide on small screens */
+    #content-related {
+        display: none !important;
+    }
+
+    /* Dashboard welcome title */
+    h1.text-2xl.font-bold {
+        font-size: 1.25rem !important;
+    }
+
+    p.text-gray-500.dark\:text-gray-400.mt-1 {
+        font-size: 0.8rem !important;
+    }
+
+    /* Card link: smaller text */
+    .rounded-lg.p-5.hover\:border-primary-300 {
+        padding: 0.75rem !important;
+    }
+
+    .rounded-lg.p-5.hover\:border-primary-300 .material-symbols-outlined {
+        font-size: 1.25rem !important;
+    }
+
+    .rounded-lg.p-5.hover\:border-primary-300 span.font-medium {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* ── Extra small screens (phones < 400px) ── */
+@media (max-width: 400px) {
+    /* Stat cards: tighter */
+    .bg-white.dark\:bg-gray-800.border.rounded-lg.p-5 {
+        padding: 0.5rem !important;
+    }
+
+    .text-3xl.font-bold {
+        font-size: 1.25rem !important;
+    }
+
+    /* Table cells: tighter */
+    td.px-5.py-3,
+    th.px-5.py-3 {
+        padding: 8px 10px !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Fieldset: tighter padding */
+    fieldset.module.aligned {
+        padding: 10px !important;
+    }
+
+    /* Dashboard card: tighter */
+    .rounded-lg.p-5.hover\:border-primary-300 {
+        padding: 0.5rem !important;
+    }
+
+    /* Quick action icons: smaller */
+    span.material-symbols-outlined.text-primary-500 {
+        font-size: 1.1rem !important;
+    }
+
+    /* Title smaller */
+    h1.text-2xl.font-bold {
+        font-size: 1.1rem !important;
+    }
+}
