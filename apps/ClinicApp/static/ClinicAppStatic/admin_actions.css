@@ -1,0 +1,291 @@
+/*
+ * Dental Clinic - Admin Action Buttons & Dark Mode Fixes
+ */
+
+/* ── Logo circular everywhere ── */
+img[src*="logo"],
+.admin-logo img,
+.sidebar-logo img,
+.site-logo img,
+header img[src*="logo"],
+nav img[src*="logo"],
+.foldable-sidebar img[src*="logo"],
+.app-unfold img[src*="logo"],
+.unfold-site-icon img,
+.logo img,
+.sidebar a img,
+nav .flex img {
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain !important;
+    clip-path: circle(50%) !important;
+    -webkit-clip-path: circle(50%) !important;
+}
+
+/* Also target SVG logos */
+svg[src*="logo"],
+img[src$=".svg"] {
+    border-radius: 50% !important;
+    clip-path: circle(50%) !important;
+    -webkit-clip-path: circle(50%) !important;
+}
+
+/* ── Action Buttons Container ── */
+.action-buttons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-decoration: none;
+    padding: 0;
+    border: 1px solid transparent;
+}
+
+.action-btn .material-symbols-outlined {
+    font-size: 20px !important;
+    line-height: 1;
+}
+
+/* ── Edit Button ── */
+.action-btn--edit {
+    background-color: #eff6ff;
+    color: #2563eb;
+    border-color: #bfdbfe;
+}
+
+.action-btn--edit:hover {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* ── Delete Button ── */
+.action-btn--delete {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+.action-btn--delete:hover {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* ── Status Badges ── */
+.status-badge {
+    display: inline-block;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.status-badge--read {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.status-badge--unread {
+    background-color: #ffedd5;
+    color: #c2410c;
+}
+
+/* ── Dark Mode - Text ── */
+.dark .text-gray-500,
+.dark .text-gray-600 {
+    color: #9ca3af !important;
+}
+
+.dark .text-gray-700 {
+    color: #d1d5db !important;
+}
+
+.dark .text-gray-900 {
+    color: #f3f4f6 !important;
+}
+
+/* ── Dark Mode - Tables ── */
+.dark th {
+    color: #d1d5db !important;
+}
+
+.dark td {
+    color: #e5e7eb !important;
+}
+
+.dark thead th {
+    background-color: #111827 !important;
+}
+
+.dark tbody tr:hover {
+    background-color: rgba(55, 65, 81, 0.4) !important;
+}
+
+/* ── Dark Mode - Backgrounds ── */
+.dark .bg-white {
+    background-color: #1f2937 !important;
+}
+
+.dark .bg-gray-50 {
+    background-color: #111827 !important;
+}
+
+.dark .bg-gray-800 {
+    background-color: #1f2937 !important;
+}
+
+.dark .bg-gray-800\/50 {
+    background-color: rgba(31, 41, 55, 0.5) !important;
+}
+
+/* ── Dark Mode - Borders ── */
+.dark .border-gray-100 {
+    border-color: #1f2937 !important;
+}
+
+.dark .border-gray-200 {
+    border-color: #374151 !important;
+}
+
+.dark .border-gray-700 {
+    border-color: #374151 !important;
+}
+
+/* ── Dark Mode - Action Buttons ── */
+.dark .action-btn--edit {
+    background-color: #1e3a5f;
+    color: #60a5fa;
+    border-color: #2563eb;
+}
+
+.dark .action-btn--edit:hover {
+    background-color: #1e40af;
+    color: #93c5fd;
+}
+
+.dark .action-btn--delete {
+    background-color: #450a0a;
+    color: #f87171;
+    border-color: #7f1d1d;
+}
+
+.dark .action-btn--delete:hover {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+}
+
+/* ── Dark Mode - Status Badges ── */
+.dark .status-badge--read {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+}
+
+.dark .status-badge--unread {
+    background-color: rgba(249, 115, 22, 0.2);
+    color: #fb923c;
+}
+
+/* ── Dark Mode - Forms ── */
+.dark label,
+.dark .field-label {
+    color: #d1d5db !important;
+}
+
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="number"],
+.dark input[type="date"],
+.dark input[type="tel"],
+.dark textarea,
+.dark select {
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #f3f4f6 !important;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+    border-color: #3b82f6 !important;
+}
+
+/* ── Dark Mode - Links ── */
+.dark a {
+    color: #60a5fa !important;
+}
+
+.dark a:hover {
+    color: #93c5fd !important;
+}
+
+/* ── Dark Mode - Headers ── */
+.dark h1,
+.dark h2,
+.dark h3 {
+    color: #f3f4f6 !important;
+}
+
+/* ── Dark Mode - Star ratings ── */
+.dark .text-amber-400 {
+    color: #fbbf24 !important;
+}
+
+/* ── Dark Mode - Paginator ── */
+.dark .paginator {
+    color: #d1d5db !important;
+}
+
+.dark .paginator a {
+    color: #60a5fa !important;
+}
+
+/* ── Dark Mode - Messages ── */
+.dark .messagelist .success {
+    background-color: rgba(34, 197, 94, 0.15) !important;
+    color: #4ade80 !important;
+}
+
+.dark .messagelist .error {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    color: #f87171 !important;
+}
+
+/* ── Dark Mode - Breadcrumbs ── */
+.dark .breadcrumbs {
+    color: #9ca3af !important;
+}
+
+.dark .breadcrumbs a {
+    color: #60a5fa !important;
+}
+
+/* ── Dark Mode - Filters ── */
+.dark .filter-block,
+.dark .admin-filter {
+    color: #d1d5db !important;
+}
+
+/* ── Dark Mode - Search ── */
+.dark #searchbar {
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #f3f4f6 !important;
+}
+
+/* ── Dark Mode - Buttons ── */
+.dark .submit-row input[type="submit"] {
+    background-color: #1e40af !important;
+    color: #ffffff !important;
+}

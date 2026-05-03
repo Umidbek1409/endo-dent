@@ -1,0 +1,158 @@
+<!--
+    Dental Clinic - Custom Admin Dashboard
+    Overrides the default Unfold admin index page with a dashboard
+    featuring stat cards and a recent appointments table.
+    Uses Unfold's built-in Tailwind CSS classes — no custom CSS needed.
+-->
+{% extends "unfold/layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}
+    {% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}
+{% endblock %}
+
+{% block branding %}
+    {% include "unfold/helpers/site_branding.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="flex flex-col gap-6">
+
+    <!-- ── Dashboard Title ── -->
+    <div>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            {% trans "Welcome to" %} {{ site_header }}
+        </h1>
+        <p class="text-gray-500 dark:text-gray-400 mt-1">
+            {% trans "Here's what's happening with your clinic today." %}
+        </p>
+    </div>
+
+    <!-- ── Stat Cards Row ── -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <!-- Total Appointments Card -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 flex flex-col gap-2 shadow-sm">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-3xl text-primary-500">calendar_month</span>
+                <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{% trans "Total Appointments" %}</p>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ total_appointments|default:"0" }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unread Appointments Card -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 flex flex-col gap-2 shadow-sm {% if unread_appointments > 0 %}border-l-4 border-l-blue-500{% endif %}">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-3xl {% if unread_appointments > 0 %}text-blue-500{% else %}text-gray-400{% endif %}">notifications_active</span>
+                <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{% trans "Unread Appointments" %}</p>
+                    <p class="text-3xl font-bold {% if unread_appointments > 0 %}text-blue-600 dark:text-blue-400{% else %}text-gray-900 dark:text-gray-100{% endif %}">{{ unread_appointments|default:"0" }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Doctors Card -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 flex flex-col gap-2 shadow-sm">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-3xl text-green-500">stethoscope</span>
+                <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{% trans "Total Doctors" %}</p>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ total_doctors|default:"0" }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Services Card -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 flex flex-col gap-2 shadow-sm">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-3xl text-amber-500">medical_services</span>
+                <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{% trans "Total Services" %}</p>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ total_services|default:"0" }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Recent Appointments Table ── -->
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm">
+        <div class="px-5 py-4 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                {% trans "Recent Appointments" %}
+            </h2>
+        </div>
+
+        {% if recent_appointments %}
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Patient Name" %}</th>
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Phone" %}</th>
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Service" %}</th>
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Date" %}</th>
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Status" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for appt in recent_appointments %}
+                    <tr class="border-b border-gray-100 dark:border-gray-700/50 hover:bg-gray-50 dark:hover:bg-gray-700/30">
+                        <td class="px-5 py-3 font-medium text-gray-900 dark:text-gray-100">{{ appt.full_name }}</td>
+                        <td class="px-5 py-3 text-gray-600 dark:text-gray-400">{{ appt.phone }}</td>
+                        <td class="px-5 py-3 text-gray-600 dark:text-gray-400">
+                            {% if appt.service %}{{ appt.service.title }}{% else %}—{% endif %}
+                        </td>
+                        <td class="px-5 py-3 text-gray-600 dark:text-gray-400">{{ appt.preferred_date }}</td>
+                        <td class="px-5 py-3">
+                            {% if appt.is_read %}
+                            <span class="font-semibold px-2 py-0.5 rounded text-xs bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400">
+                                {% trans "Read" %}
+                            </span>
+                            {% else %}
+                            <span class="font-semibold px-2 py-0.5 rounded text-xs bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400">
+                                {% trans "Unread" %}
+                            </span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="px-5 py-12 text-center">
+            <span class="material-symbols-outlined text-5xl text-gray-300 dark:text-gray-600">event_busy</span>
+            <p class="text-gray-500 dark:text-gray-400 mt-3">{% trans "No appointments yet." %}</p>
+        </div>
+        {% endif %}
+
+        <!-- Link to view all appointments -->
+        {% if recent_appointments %}
+        <div class="px-5 py-3 border-t border-gray-200 dark:border-gray-700">
+            <a href="{% url 'admin:ClinicApp_appointment_changelist' %}" class="text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
+                {% trans "View all appointments" %} →
+            </a>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- ── Quick Links ── -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="{% url 'admin:ClinicApp_herosection_changelist' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary-500">image</span>
+            <span class="font-medium text-gray-900 dark:text-gray-100">{% trans "Edit Hero Section" %}</span>
+        </a>
+        <a href="{% url 'admin:ClinicApp_clinicinfo_changelist' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary-500">info</span>
+            <span class="font-medium text-gray-900 dark:text-gray-100">{% trans "Edit Clinic Info" %}</span>
+        </a>
+        <a href="{% url 'admin:ClinicApp_service_changelist' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary-500">medical_services</span>
+            <span class="font-medium text-gray-900 dark:text-gray-100">{% trans "Manage Services" %}</span>
+        </a>
+    </div>
+
+</div>
+{% endblock %}
