@@ -10,6 +10,25 @@
 {% block extrastyle %}
     {{ block.super }}
     {{ form.media }}
+    <style>
+        #login-form button[type="submit"],
+        #login-form input[type="submit"],
+        #login-form .submit-row button,
+        #login-form .submit-row input[type="submit"] {
+            font-size: 18px !important;
+            padding: 16px 32px !important;
+            font-weight: 700 !important;
+            background-color: #4A90D9 !important;
+            color: #ffffff !important;
+            border-radius: 12px !important;
+            letter-spacing: 0.5px !important;
+        }
+        #login-form button[type="submit"]:hover,
+        #login-form input[type="submit"]:hover {
+            background-color: #3a7bc8 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
 {% endblock %}
 
 {% block title %}
@@ -59,7 +78,7 @@
 
         <div class="flex flex-col gap-3 mt-6">
             {% component "unfold/components/button.html" with submit=1 variant="primary" class="submit-row w-full" %}
-                {% translate 'Log in' %} <span class="material-symbols-outlined relative right-0 text-sm transition-all group-hover:-right-1">arrow_forward</span>
+                Kirish <span class="material-symbols-outlined relative right-0 text-sm transition-all group-hover:-right-1">arrow_forward</span>
             {% endcomponent %}
 
             {% url 'admin_password_reset' as password_reset_url %}
