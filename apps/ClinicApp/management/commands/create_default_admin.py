@@ -1,6 +1,7 @@
 """
-Django management command to automatically create a superuser
-if one does not already exist. Uses environment variables for credentials.
+Django management command to automatically create or update a superuser
+using environment variables. This ensures admin credentials are always
+correct on every deploy.
 
 Usage:
     python manage.py create_default_admin
@@ -8,7 +9,7 @@ Usage:
 Environment variables:
     ADMIN_USERNAME - Admin username (default: 'admin')
     ADMIN_EMAIL    - Admin email (default: 'admin@example.com')
-    ADMIN_PASSWORD - Admin password (REQUIRED if creating new user)
+    ADMIN_PASSWORD - Admin password (REQUIRED)
 """
 
 import os
@@ -18,30 +19,36 @@ from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
-    help = "Creates a default superuser if none exists"
+    help = "Creates or updates the default superuser"
 
     def handle(self, *args, **options):
-        if User.objects.filter(is_superuser=True).exists():
-            self.stdout.write(self.style.SUCCESS("Superuser already exists. Skipping."))
-            return
-
         username = os.environ.get("ADMIN_USERNAME", "admin")
         email = os.environ.get("ADMIN_EMAIL", "admin@example.com")
         password = os.environ.get("ADMIN_PASSWORD")
 
         if not password:
-            self.stdout.write(self.style.WARNING(
-                "ADMIN_PASSWORD not set. No superuser created. "
-                "Set the ADMIN_PASSWORD environment variable to create one."
+            self.stdout.write(self.style.ERROR(
+                "ADMIN_PASSWORD environment variable is required."
             ))
             return
 
-        User.objects.create_superuser(
-            username=username,
-            email=email,
-            password=password,
-        )
+        user = User.objects.filter(username=username).first()
 
-        self.stdout.write(self.style.SUCCESS(
-            f"Superuser '{username}' created successfully!"
-        ))
+        if user:
+            user.set_password(password)
+            user.email = email
+            user.is_superuser = True
+            user.is_staff = True
+            user.save()
+            self.stdout.write(self.style.SUCCESS(
+                f"Superuser '{username}' updated successfully!"
+            ))
+        else:
+            User.objects.create_superuser(
+                username=username,
+                email=email,
+                password=password,
+            )
+            self.stdout.write(self.style.SUCCESS(
+                f"Superuser '{username}' created successfully!"
+            ))
