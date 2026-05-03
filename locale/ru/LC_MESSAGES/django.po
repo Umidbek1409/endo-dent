@@ -1,0 +1,521 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-03 11:30+0500\n"
+"PO-Revision-Date: 2026-05-03 11:30+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+# ── Language Names ──
+msgid "O'zbek"
+msgstr "Узбек"
+
+msgid "Русский"
+msgstr "Русский"
+
+msgid "English"
+msgstr "Английский"
+
+# ── Language Switcher ──
+msgid "Language"
+msgstr "Язык"
+
+# ── HeroSection Model ──
+msgid "Hero Section"
+msgstr "Главный экран"
+
+msgid "Hero Sections"
+msgstr "Главные экраны"
+
+msgid "Main headline text shown at the top of the homepage, e.g. 'Your Perfect Smile Starts Here'"
+msgstr "Основной заголовок на главной странице"
+
+msgid "Subtitle or description text displayed below the main headline"
+msgstr "Подзаголовок или описание под основным заголовком"
+
+msgid "Background image for the hero section. Recommended size: 1200x800px"
+msgstr "Фоновое изображение главного экрана. Рекомендуется: 1200x800px"
+
+msgid "Text displayed on the call-to-action button, e.g. 'Book Appointment'"
+msgstr "Текст на кнопке действия, например: 'Записаться на приём'"
+
+msgid "URL the button links to. Leave as '#' to open the booking modal"
+msgstr "URL-адрес кнопки. Оставьте '#', чтобы открыть форму записи"
+
+msgid "Check to display this hero section on the website. Uncheck to hide it."
+msgstr "Отметьте, чтобы показать на сайте. Снимите, чтобы скрыть."
+
+# ── Service Model ──
+msgid "Service"
+msgstr "Услуга"
+
+msgid "Services"
+msgstr "Услуги"
+
+msgid "Service name as it appears on the website, e.g. 'General Dentistry'"
+msgstr "Название услуги, отображаемое на сайте"
+
+msgid "Short description of the service shown on the service card"
+msgstr "Краткое описание услуги на карточке"
+
+msgid "Icon image for the service card. If left empty, a default tooth icon is shown."
+msgstr "Значок для карточки услуги. Если пусто, отображается значок зуба по умолчанию."
+
+msgid "Display order — lower numbers appear first on the website (e.g. 1, 2, 3)"
+msgstr "Порядок отображения — меньшие числа показываются первыми"
+
+msgid "Uncheck to hide this service from the website without deleting it"
+msgstr "Снимите, чтобы скрыть услугу с сайта без удаления"
+
+# ── Doctor Model ──
+msgid "Doctor"
+msgstr "Врач"
+
+msgid "Doctors"
+msgstr "Врачи"
+
+msgid "Doctor's full name with title, e.g. 'Dr. James Wilson'"
+msgstr "Полное имя врача, например: 'Д-р Джеймс Уилсон'"
+
+msgid "Medical specialty, e.g. 'Lead Implantologist' or 'Orthodontics Specialist'"
+msgstr "Медицинская специализация, например: 'Имплантолог' или 'Ортодонт'"
+
+msgid "Short biography or description shown below the doctor's name"
+msgstr "Краткая биография или описание под именем врача"
+
+msgid "Professional headshot photo of the doctor. Recommended: square image, at least 300x300px"
+msgstr "Профессиональное фото врача. Рекомендуется: квадратное изображение, минимум 300x300px"
+
+msgid "Number of years of professional experience, e.g. 7"
+msgstr "Количество лет профессионального опыта, например: 7"
+
+msgid "Uncheck to hide this doctor from the website without deleting the record"
+msgstr "Снимите, чтобы скрыть врача с сайта без удаления записи"
+
+# ── Testimonial Model ──
+msgid "Testimonial"
+msgstr "Отзыв"
+
+msgid "Testimonials"
+msgstr "Отзывы"
+
+msgid "Patient's full name as shown in the review"
+msgstr "Полное имя пациента в отзыве"
+
+msgid "The patient's testimonial or review text"
+msgstr "Текст отзыва пациента"
+
+msgid "Star rating from 1 to 5 stars given by the patient"
+msgstr "Рейтинг от 1 до 5 звёзд, оставленный пациентом"
+
+msgid "Optional photo of the patient. Leave empty if the patient prefers anonymity."
+msgstr "Фото пациента (по желанию). Оставьте пустым для анонимности."
+
+msgid "Uncheck to hide this testimonial from the website without deleting it"
+msgstr "Снимите, чтобы скрыть отзыв с сайта без удаления"
+
+# ── GalleryImage Model ──
+msgid "Gallery Image"
+msgstr "Изображение галереи"
+
+msgid "Gallery Images"
+msgstr "Изображения галереи"
+
+msgid "Gallery image file. Recommended: landscape orientation, at least 600x400px"
+msgstr "Файл изображения галереи. Рекомендуется: горизонтальная ориентация, минимум 600x400px"
+
+msgid "Optional caption describing the image, e.g. 'Before & After: Teeth Whitening'"
+msgstr "Подпись к изображению (по желанию), например: 'До и после: Отбеливание зубов'"
+
+msgid "Display order — lower numbers appear first in the gallery grid (e.g. 1, 2, 3)"
+msgstr "Порядок отображения в галерее — меньшие числа показываются первыми"
+
+msgid "Uncheck to hide this image from the gallery without deleting it"
+msgstr "Снимите, чтобы скрыть изображение из галереи без удаления"
+
+# ── ClinicInfo Model ──
+msgid "Clinic Information"
+msgstr "Информация о клинике"
+
+msgid "Official name of the clinic, e.g. 'BrightSmile Dental'"
+msgstr "Официальное название клиники"
+
+msgid "Full physical address of the clinic, e.g. '123 Bright Avenue, Suite 200, New York, NY 10001'"
+msgstr "Полный физический адрес клиники"
+
+msgid "Primary contact phone number, e.g. '(555) 123-4567'"
+msgstr "Основной контактный телефон"
+
+msgid "Primary contact email address, e.g. 'hello@brightsmile.com'"
+msgstr "Основной адрес электронной почты"
+
+msgid "Operating hours, e.g. 'Mon–Fri: 8AM–7PM | Sat: 9AM–4PM'"
+msgstr "Часы работы, например: 'Пн–Пт: 8:00–19:00 | Сб: 9:00–16:00'"
+
+msgid "Clinic logo image displayed in the navigation bar and footer. Recommended: transparent PNG, 200x60px"
+msgstr "Логотип клиники для навигации и футера. Рекомендуется: прозрачный PNG, 200x60px"
+
+msgid "Full URL to the clinic's Facebook page. Leave empty to hide the Facebook link."
+msgstr "Полный URL страницы Facebook. Оставьте пустым, чтобы скрыть ссылку."
+
+msgid "Full URL to the clinic's Instagram page. Leave empty to hide the Instagram link."
+msgstr "Полный URL страницы Instagram. Оставьте пустым, чтобы скрыть ссылку."
+
+msgid "Full URL to the clinic's YouTube channel. Leave empty to hide the YouTube link."
+msgstr "Полный URL канала YouTube. Оставьте пустым, чтобы скрыть ссылку."
+
+msgid "About section text describing the clinic's history, mission, and values"
+msgstr "Текст раздела 'О нас', описывающий историю, миссию и ценности клиники"
+
+msgid "Image displayed in the About section. Recommended: 800x600px"
+msgstr "Изображение в разделе 'О нас'. Рекомендуется: 800x600px"
+
+msgid "Telegram Bot Token from @BotFather, e.g. '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11'"
+msgstr "Токен Telegram-бота от @BotFather"
+
+msgid "Telegram Group/Channel ID where notifications are sent, e.g. '-1001234567890'"
+msgstr "ID Telegram-группы/канала для отправки уведомлений"
+
+# ── FAQ Model ──
+msgid "FAQ"
+msgstr "Вопрос-ответ"
+
+msgid "FAQs"
+msgstr "Вопросы-ответы"
+
+msgid "The FAQ question text, e.g. 'Do you accept dental insurance?'"
+msgstr "Текст вопроса, например: 'Принимаете ли вы стоматологическую страховку?'"
+
+msgid "The detailed answer to the question"
+msgstr "Подробный ответ на вопрос"
+
+msgid "Uncheck to hide this FAQ from the website without deleting it"
+msgstr "Снимите, чтобы скрыть вопрос с сайта без удаления"
+
+# ── Appointment Model ──
+msgid "Appointment"
+msgstr "Запись на приём"
+
+msgid "Appointments"
+msgstr "Записи на приём"
+
+msgid "Patient's full name as entered in the booking form"
+msgstr "Полное имя пациента из формы записи"
+
+msgid "Patient's phone number for callback confirmation"
+msgstr "Номер телефона пациента для подтверждения"
+
+msgid "Patient's email address (optional)"
+msgstr "Адрес электронной почты пациента (по желанию)"
+
+msgid "The date the patient requested for their appointment"
+msgstr "Желаемая дата приёма"
+
+msgid "The time the patient requested, e.g. '14:00' (optional)"
+msgstr "Желаемое время приёма, например: '14:00' (по желанию)"
+
+msgid "The dental service the patient selected when booking"
+msgstr "Выбранная стоматологическая услуга"
+
+msgid "Any additional notes or comments the patient added"
+msgstr "Дополнительные заметки или комментарии пациента"
+
+msgid "Automatically set — the date and time this appointment was submitted"
+msgstr "Устанавливается автоматически — дата и время отправки"
+
+msgid "Check this box after you have reviewed the appointment request"
+msgstr "Отметьте после просмотра заявки на приём"
+
+# ── Admin Fieldset Labels ──
+msgid "Content"
+msgstr "Содержание"
+
+msgid "Call to Action"
+msgstr "Кнопка действия"
+
+msgid "Media"
+msgstr "Медиа"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Service Details"
+msgstr "Детали услуги"
+
+msgid "Display"
+msgstr "Отображение"
+
+msgid "Personal Info"
+msgstr "Личные данные"
+
+msgid "Biography"
+msgstr "Биография"
+
+msgid "Patient Info"
+msgstr "Информация о пациенте"
+
+msgid "Review"
+msgstr "Отзыв"
+
+msgid "Image Details"
+msgstr "Детали изображения"
+
+msgid "Basic Info"
+msgstr "Основная информация"
+
+msgid "Branding"
+msgstr "Брендинг"
+
+msgid "Social Media"
+msgstr "Социальные сети"
+
+msgid "About Section"
+msgstr "О клинике"
+
+msgid "Telegram Notifications"
+msgstr "Telegram-уведомления"
+
+msgid "Question & Answer"
+msgstr "Вопрос и ответ"
+
+msgid "Patient Details"
+msgstr "Данные пациента"
+
+msgid "Appointment Request"
+msgstr "Заявка на приём"
+
+msgid "Additional Info"
+msgstr "Дополнительная информация"
+
+# ── Admin Display Descriptions ──
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Preview"
+msgstr "Предпросмотр"
+
+msgid "Icon"
+msgstr "Значок"
+
+msgid "Photo"
+msgstr "Фото"
+
+msgid "Rating"
+msgstr "Рейтинг"
+
+msgid "Image"
+msgstr "Изображение"
+
+msgid "Logo"
+msgstr "Логотип"
+
+msgid "Enter your Telegram Bot Token (from @BotFather) and Group/Channel ID to receive appointment notifications."
+msgstr "Введите токен Telegram-бота и ID группы/канала для получения уведомлений о записях."
+
+# ── Admin Actions & Badges ──
+msgid "✓ Read"
+msgstr "✓ Прочитано"
+
+msgid "● Unread"
+msgstr "● Не прочитано"
+
+msgid "Mark selected appointments as Read"
+msgstr "Отметить выбранные записи как прочитанные"
+
+msgid "{} appointment(s) marked as read."
+msgstr "{} записей отмечено как прочитанные."
+
+# ── Admin Dashboard ──
+msgid "Welcome to"
+msgstr "Добро пожаловать в"
+
+msgid "Here's what's happening with your clinic today."
+msgstr "Вот что происходит в вашей клинике сегодня."
+
+msgid "Total Appointments"
+msgstr "Всего записей"
+
+msgid "Unread Appointments"
+msgstr "Непрочитанные записи"
+
+msgid "Total Doctors"
+msgstr "Всего врачей"
+
+msgid "Total Services"
+msgstr "Всего услуг"
+
+msgid "Recent Appointments"
+msgstr "Последние записи"
+
+msgid "Patient Name"
+msgstr "Имя пациента"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Read"
+msgstr "Прочитано"
+
+msgid "Unread"
+msgstr "Не прочитано"
+
+msgid "View all appointments"
+msgstr "Посмотреть все записи"
+
+msgid "Edit Hero Section"
+msgstr "Редактировать главный экран"
+
+msgid "Edit Clinic Info"
+msgstr "Редактировать информацию о клинике"
+
+msgid "Manage Services"
+msgstr "Управление услугами"
+
+msgid "No appointments yet."
+msgstr "Записей пока нет."
+
+# ── Sidebar Navigation ──
+msgid "Website Content"
+msgstr "Содержимое сайта"
+
+msgid "About & Clinic Info"
+msgstr "О клинике"
+
+msgid "Our Doctors"
+msgstr "Наши врачи"
+
+msgid "Gallery"
+msgstr "Галерея"
+
+msgid "Patient Reviews"
+msgstr "Отзывы пациентов"
+
+msgid "All Appointments"
+msgstr "Все записи"
+
+msgid "System"
+msgstr "Система"
+
+msgid "Users"
+msgstr "Пользователи"
+
+# ── General Admin ──
+msgid "Django site admin"
+msgstr "Администрирование сайта Django"
+
+msgid "Staff Access Only"
+msgstr "Только для персонала"
+
+msgid "Log in"
+msgstr "Войти"
+
+msgid "Forgotten your password or username?"
+msgstr "Забыли пароль или имя пользователя?"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Change"
+msgstr "Изменить"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Are you sure you want to delete this?"
+msgstr "Вы уверены, что хотите удалить это?"
+
+msgid "Are you sure you want to delete this appointment?"
+msgstr "Вы уверены, что хотите удалить эту запись?"
+
+msgid "View"
+msgstr "Просмотр"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Yes, I'm sure"
+msgstr "Да, я уверен"
+
+msgid "No, take me back"
+msgstr "Нет, вернуть назад"
+
+msgid "Select"
+msgstr "Выбрать"
+
+msgid "Select all"
+msgstr "Выбрать все"
+
+msgid "Deselect all"
+msgstr "Отменить выбор"
+
+msgid "Filter"
+msgstr "Фильтр"
+
+msgid "Clear"
+msgstr "Очистить"
+
+msgid "by"
+msgstr "пользователем"
+
+msgid "Show"
+msgstr "Показать"
+
+msgid "Hide"
+msgstr "Скрыть"
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Administration"
+msgstr "Администрирование"
+
+msgid "Recent Actions"
+msgstr "Последние действия"
+
+msgid "My Actions"
+msgstr "Мои действия"
+
+msgid "None available"
+msgstr "Нет доступных"
+
+msgid "changed"
+msgstr "изменено"
+
+msgid "You don't have permission to view or edit anything."
+msgstr "У вас нет прав для просмотра или редактирования."
+
+# ── Create Default Admin ──
+msgid "Superuser already exists. Skipping."
+msgstr "Суперпользователь уже существует. Пропуск."
+
+msgid "ADMIN_PASSWORD not set. No superuser created. Set the ADMIN_PASSWORD environment variable to create one."
+msgstr "ADMIN_PASSWORD не установлен. Суперпользователь не создан. Установите переменную среды ADMIN_PASSWORD."
+
+msgid "Superuser '{}' created successfully!"
+msgstr "Суперпользователь '{}' успешно создан!"
