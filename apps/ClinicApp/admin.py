@@ -73,7 +73,7 @@ class BaseAdmin(ModelAdmin):
 
 @admin.register(HeroSection)
 class HeroSectionAdmin(BaseAdmin):
-    list_display = ("hero_header_display", "button_text", "is_active", "hero_thumbnail", "action_buttons")
+    list_display = ("hero_header_display", "button_text", "is_active", "action_buttons")
     list_display_links = ("hero_header_display",)
     list_editable = ("is_active",)
     list_filter = ("is_active",)
@@ -81,7 +81,6 @@ class HeroSectionAdmin(BaseAdmin):
     fieldsets = (
         (_("Content"), {"fields": ("headline", "subheadline")}),
         (_("Call to Action"), {"fields": ("button_text", "button_link")}),
-        (_("Media"), {"fields": ("background_image",)}),
         (_("Status"), {"fields": ("is_active",)}),
     )
 
@@ -89,15 +88,6 @@ class HeroSectionAdmin(BaseAdmin):
     def hero_header_display(self, obj):
         sub = obj.subheadline[:80] + '...' if len(obj.subheadline) > 80 else obj.subheadline
         return [obj.headline, sub]
-
-    @display(description=_("Preview"))
-    def hero_thumbnail(self, obj):
-        if obj.background_image:
-            return format_html(
-                '<img src="{}" width="80" height="50" style="border-radius:8px;object-fit:cover;" />',
-                obj.background_image.url
-            )
-        return "—"
 
 
 @admin.register(Service)

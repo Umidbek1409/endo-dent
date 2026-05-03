@@ -23,10 +23,6 @@ class HeroSection(models.Model):
     subheadline = models.TextField(
         help_text=_("Subtitle or description text displayed below the main headline")
     )
-    background_image = models.ImageField(
-        upload_to='hero/',
-        help_text=_("Background image for the hero section. Recommended size: 1200x800px")
-    )
     button_text = models.CharField(
         max_length=100,
         default="Book Appointment",

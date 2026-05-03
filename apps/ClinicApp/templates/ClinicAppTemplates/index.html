@@ -98,12 +98,7 @@
                         </div>
                     </div>
                     <div class="hero-visual reveal rev-slide-up stagger-2">
-                        <!-- Hero background image from HeroSection model -->
-                        {% if hero and hero.background_image %}
-                        <img src="{{ hero.background_image.url }}" alt="{{ hero.headline }}" style="max-width:100%;border-radius:20px;box-shadow:var(--shadow-medium);">
-                        {% else %}
                         <div class="hero-tooth">🦷</div>
-                        {% endif %}
                         <div style="position: absolute; top: 0; right: 0; padding: 20px; background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); box-shadow: var(--shadow-soft); max-width: calc(100% - 20px); overflow: hidden;">
                             <span style="display: block; font-weight: 800; color: var(--primary);">Ближайшее время</span>
                             <span style="font-size: 14px;">Сегодня в 14:00</span>
