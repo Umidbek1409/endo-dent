@@ -248,13 +248,55 @@ UNFOLD = {
     "DASHBOARD_CALLBACK": "apps.ClinicApp.admin.dashboard_callback",
 
     # ── Language Switcher ─────────────────
-    # "SHOW_LANGUAGES": True,
+    "SHOW_LANGUAGES": True,
 
     # ── Sidebar Navigation ────────────────
     "SIDEBAR": {
         "show_search": True,
         "show_all_applications": False,
         "navigation": [
+            # ── Translate Content group ──
+            {
+                "title": "🌐 Translate Content",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Hero Section",
+                        "icon": "translate",
+                        "link": reverse_lazy("admin:ClinicApp_herosection_changelist"),
+                    },
+                    {
+                        "title": "About & Clinic Info",
+                        "icon": "translate",
+                        "link": reverse_lazy("admin:ClinicApp_clinicinfo_changelist"),
+                    },
+                    {
+                        "title": "Services",
+                        "icon": "translate",
+                        "link": reverse_lazy("admin:ClinicApp_service_changelist"),
+                    },
+                    {
+                        "title": "Our Doctors",
+                        "icon": "translate",
+                        "link": reverse_lazy("admin:ClinicApp_doctor_changelist"),
+                    },
+                    {
+                        "title": "Gallery",
+                        "icon": "translate",
+                        "link": reverse_lazy("admin:ClinicApp_galleryimage_changelist"),
+                    },
+                    {
+                        "title": "Patient Reviews",
+                        "icon": "translate",
+                        "link": reverse_lazy("admin:ClinicApp_testimonial_changelist"),
+                    },
+                    {
+                        "title": "FAQ",
+                        "icon": "translate",
+                        "link": reverse_lazy("admin:ClinicApp_faq_changelist"),
+                    },
+                ],
+            },
             # ── Website Content group ──
             {
                 "title": "Website Content",
