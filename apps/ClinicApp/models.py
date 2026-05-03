@@ -102,7 +102,9 @@ class Doctor(models.Model):
     )
     photo = models.ImageField(
         upload_to='doctors/',
-        help_text=_("Professional headshot photo of the doctor. Recommended: square image, at least 300x300px")
+        blank=True,
+        null=True,
+        help_text=_("Professional headshot photo of the doctor. Recommended: square image, at least 300x300px. Leave empty for default avatar.")
     )
     experience_years = models.PositiveIntegerField(
         help_text=_("Number of years of professional experience, e.g. 7")
@@ -172,7 +174,9 @@ class Testimonial(models.Model):
 class GalleryImage(models.Model):
     image = models.ImageField(
         upload_to='gallery/',
-        help_text=_("Gallery image file. Recommended: landscape orientation, at least 600x400px")
+        blank=True,
+        null=True,
+        help_text=_("Gallery image file. Recommended: landscape orientation, at least 600x400px. Leave empty for placeholder.")
     )
     caption = models.CharField(
         max_length=200,
@@ -222,7 +226,9 @@ class ClinicInfo(models.Model):
     )
     logo = models.ImageField(
         upload_to='branding/',
-        help_text=_("Clinic logo image displayed in the navigation bar and footer. Recommended: transparent PNG, 200x60px")
+        blank=True,
+        null=True,
+        help_text=_("Clinic logo image displayed in the navigation bar and footer. Recommended: transparent PNG, 200x60px. Leave empty for text-based logo.")
     )
     facebook_url = models.URLField(
         blank=True,
@@ -244,7 +250,9 @@ class ClinicInfo(models.Model):
     )
     about_image = models.ImageField(
         upload_to='about/',
-        help_text=_("Image displayed in the About section. Recommended: 800x600px")
+        blank=True,
+        null=True,
+        help_text=_("Image displayed in the About section. Recommended: 800x600px. Leave empty for gradient placeholder.")
     )
     telegram_bot_token = models.CharField(
         max_length=200,

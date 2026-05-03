@@ -12,6 +12,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
+from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from unfold.admin import ModelAdmin
 from unfold.decorators import display
 
@@ -41,8 +42,8 @@ def dashboard_callback(request: HttpRequest, context: dict) -> dict:
     return context
 
 
-class BaseAdmin(ModelAdmin):
-    """Base admin with inline Edit/Delete buttons."""
+class BaseAdmin(TranslationAdmin, ModelAdmin):
+    """Base admin with inline Edit/Delete buttons and translation support."""
 
     class Media:
         js = ("ClinicAppStatic/admin_preview.js", "ClinicAppStatic/admin_actions.js")

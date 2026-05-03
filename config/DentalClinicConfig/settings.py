@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'unfold',
     'unfold.contrib.filters',
     'unfold.contrib.forms',
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -142,13 +143,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # ─────────────────────────────────────────────
 
 # Default language code for the site
-LANGUAGE_CODE = 'uz'
+LANGUAGE_CODE = 'ru'
 
 LANGUAGES = [
-    ('uz', "O'zbek"),
     ('ru', 'Русский'),
+    ('uz', "O'zbek"),
     ('en', 'English'),
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+
+MODELTRANSLATION_FALLBACK_LANGUAGES = {
+    'default': ('ru',),
+}
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
