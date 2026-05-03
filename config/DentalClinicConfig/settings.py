@@ -93,6 +93,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',  # Adds request object to templates
+                'django.template.context_processors.i18n',  # Adds language context to templates
                 'django.contrib.auth.context_processors.auth', # Adds user object to templates
                 'django.contrib.messages.context_processors.messages',  # Adds messages to templates
             ],
@@ -240,7 +241,7 @@ UNFOLD = {
     "DASHBOARD_CALLBACK": "apps.ClinicApp.admin.dashboard_callback",
 
     # ── Language Switcher ─────────────────
-    "SHOW_LANGUAGES": True,
+    # "SHOW_LANGUAGES": True,
 
     # ── Sidebar Navigation ────────────────
     "SIDEBAR": {
