@@ -12,7 +12,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
-from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
+from modeltranslation.admin import TranslationBaseModelAdmin
 from unfold.admin import ModelAdmin
 from unfold.decorators import display
 
@@ -42,7 +42,7 @@ def dashboard_callback(request: HttpRequest, context: dict) -> dict:
     return context
 
 
-class BaseAdmin(TranslationAdmin, ModelAdmin):
+class BaseAdmin(TranslationBaseModelAdmin, ModelAdmin):
     """Base admin with inline Edit/Delete buttons and translation support."""
 
     class Media:
