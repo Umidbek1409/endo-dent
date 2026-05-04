@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'unfold',
     'unfold.contrib.filters',
     'unfold.contrib.forms',
-    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -67,7 +66,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -93,10 +91,9 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.request',  # Adds request object to templates
-                'django.template.context_processors.i18n',  # Adds language context to templates
-                'django.contrib.auth.context_processors.auth', # Adds user object to templates
-                'django.contrib.messages.context_processors.messages',  # Adds messages to templates
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -145,25 +142,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Default language code for the site
 LANGUAGE_CODE = 'ru'
 
-LANGUAGES = [
-    ('ru', 'Русский'),
-    ('uz', "O'zbek"),
-    ('en', 'English'),
-]
-
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
-
-MODELTRANSLATION_FALLBACK_LANGUAGES = {
-    'default': ('ru',),
-}
-
-LOCALE_PATHS = [
-    BASE_DIR / 'locale',
-]
-
 TIME_ZONE = 'Asia/Tashkent'
 
-USE_I18N = True
+USE_I18N = False
 
 USE_TZ = True
 
@@ -247,56 +228,11 @@ UNFOLD = {
     # ── Dashboard Callback ────────────────
     "DASHBOARD_CALLBACK": "apps.ClinicApp.admin.dashboard_callback",
 
-    # ── Language Switcher ─────────────────
-    "SHOW_LANGUAGES": True,
-
     # ── Sidebar Navigation ────────────────
     "SIDEBAR": {
         "show_search": True,
         "show_all_applications": False,
         "navigation": [
-            # ── Translate Content group ──
-            {
-                "title": "🌐 Translate Content",
-                "separator": True,
-                "items": [
-                    {
-                        "title": "Hero Section",
-                        "icon": "translate",
-                        "link": reverse_lazy("admin:ClinicApp_herosection_changelist"),
-                    },
-                    {
-                        "title": "About & Clinic Info",
-                        "icon": "translate",
-                        "link": reverse_lazy("admin:ClinicApp_clinicinfo_changelist"),
-                    },
-                    {
-                        "title": "Services",
-                        "icon": "translate",
-                        "link": reverse_lazy("admin:ClinicApp_service_changelist"),
-                    },
-                    {
-                        "title": "Our Doctors",
-                        "icon": "translate",
-                        "link": reverse_lazy("admin:ClinicApp_doctor_changelist"),
-                    },
-                    {
-                        "title": "Gallery",
-                        "icon": "translate",
-                        "link": reverse_lazy("admin:ClinicApp_galleryimage_changelist"),
-                    },
-                    {
-                        "title": "Patient Reviews",
-                        "icon": "translate",
-                        "link": reverse_lazy("admin:ClinicApp_testimonial_changelist"),
-                    },
-                    {
-                        "title": "FAQ",
-                        "icon": "translate",
-                        "link": reverse_lazy("admin:ClinicApp_faq_changelist"),
-                    },
-                ],
-            },
             # ── Website Content group ──
             {
                 "title": "Website Content",
