@@ -6,14 +6,14 @@
 -->
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uz">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Dynamic page title from ClinicInfo -->
-    <title>{% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}BrightSmile{% endif %} | Стоматология премиум-класса</title>
-    <meta name="description" content="Получите первоклассную стоматологическую помощь в {% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}BrightSmile{% endif %}. Современные технологии, заботливые специалисты и идеальная улыбка.">
+<title>{% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}BrightSmile{% endif %} | Premium stomatologiya</title>
+     <meta name="description" content="{% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}BrightSmile{% endif %}da birinchi darajali stomatologik xizmat oling. Zamonaviy texnologiyalar, g'amkash mutaxassislar va mukammal tabassum.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,11 +40,11 @@
                 {% if clinic_info %}
                     {{ clinic_info.clinic_name }}
                 {% else %}
-                    🦷 BrightSmile <span>Стоматология</span>
+                    🦷 BrightSmile <span>Stomatologiya</span>
                 {% endif %}
             </a>
             <div class="nav-btn-wrap">
-                <button class="btn btn-gold open-modal nav-book-btn">Записаться на прием</button>
+                <button class="btn btn-gold open-modal nav-book-btn">Qabulga yozilish</button>
             </div>
             <div class="nav-mobile-wrap">
                 <div class="nav-mobile-btn" id="mobile-toggle">
@@ -57,15 +57,15 @@
     </nav>
 
     <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-            <a href="#home" class="mobile-link">Главная</a>
-            <a href="#about" class="mobile-link">О нас</a>
-            <a href="#services" class="mobile-link">Услуги</a>
-            <a href="#team" class="mobile-link">Команда</a>
-            <a href="#gallery" class="mobile-link">Галерея</a>
-            <a href="#testimonials" class="mobile-link">Отзывы</a>
-            <a href="#contact" class="mobile-link">Контакты</a>
-        </div>
+<div class="mobile-menu" id="mobile-menu">
+             <a href="#home" class="mobile-link">Bosh sahifa</a>
+             <a href="#about" class="mobile-link">Biz haqimizda</a>
+             <a href="#services" class="mobile-link">Xizmatlar</a>
+             <a href="#team" class="mobile-link">Jamoa</a>
+             <a href="#gallery" class="mobile-link">Galereya</a>
+             <a href="#testimonials" class="mobile-link">Sharhlar</a>
+             <a href="#contact" class="mobile-link">Kontaktlar</a>
+         </div>
 
     <!-- Main Content -->
     <main>
@@ -81,28 +81,27 @@
             <div class="container">
                 <div class="hero-flex">
                     <div class="hero-content reveal rev-slide-up">
-                        <div class="hero-badge" data-i18n="hero-badge">✨ Стоматологическая клиника №1 в городе</div>
-                        <!-- Dynamic hero headline from HeroSection model -->
-                        <h1 class="hero-title" data-i18n="hero-title">{% if hero %}{{ hero.headline }}{% else %}Ваша идеальная улыбка начинается здесь{% endif %}</h1>
-                        <!-- Dynamic hero subheadline from HeroSection model -->
-                        <p class="hero-subtitle" data-i18n="hero-subtitle">{% if hero %}{{ hero.subheadline }}{% else %}Получите стоматологическую помощь мирового класса с передовыми технологиями, внимательными специалистами и атмосферой комфорта. Мы делаем каждый визит удобным, а каждую улыбку незабываемой.{% endif %}</p>
-                        <div class="hero-btns">
-                            <!-- Dynamic hero button text from HeroSection model -->
-                            <button class="btn btn-gold open-modal" data-i18n="book-btn">{% if hero %}{{ hero.button_text }}{% else %}Записаться на приём{% endif %}</button>
-                            <button class="btn btn-outline" data-i18n="tour-btn">Смотреть тур ▶</button>
-                        </div>
-                        <div class="trust-metrics">
-                            <div class="metric"><span class="metric-val">⭐ 4.9/5</span><span class="metric-label" data-i18n="metric-rating">Рейтинг</span></div>
-                            <div class="metric"><span class="metric-val">🏆 15+ лет</span><span class="metric-label" data-i18n="metric-exp">Опыт</span></div>
-                            <div class="metric"><span class="metric-val">😊 10 000+</span><span class="metric-label" data-i18n="metric-patients">Пациентов</span></div>
-                        </div>
+<div class="hero-badge" data-i18n="hero-badge">✨ Shahardagi #1 stomatologiya klinikasi</div>
+                         <!-- Dynamic hero headline from HeroSection model -->
+                         <h1 class="hero-title" data-i18n="hero-title">{% if hero %}{{ hero.headline }}{% else %}Sizning mukammal tabassumingiz shu yerda boshlanadi{% endif %}</h1>
+                         <!-- Dynamic hero subheadline from HeroSection model -->
+                         <p class="hero-subtitle" data-i18n="hero-subtitle">{% if hero %}{{ hero.subheadline }}{% else %}Zamonaviy texnologiyalar, g'amkash mutaxassislar va qulay muhit bilan jahon darajasidagi stomatologik xizmat oling. Biz har bir tashrifni qulay, har bir tabassumni esa unutilmas qilamiz.{% endif %}</p>
+<div class="hero-btns">
+                              <!-- Dynamic hero button text from HeroSection model -->
+                              <button class="btn btn-gold open-modal" data-i18n="book-btn">{% if hero %}{{ hero.button_text }}{% else %}Qabulga yozilish{% endif %}</button>
+                          </div>
+                         <div class="trust-metrics">
+                             <div class="metric"><span class="metric-val">⭐ 4.9/5</span><span class="metric-label" data-i18n="metric-rating">Reyting</span></div>
+                             <div class="metric"><span class="metric-val">🏆 15+ yil</span><span class="metric-label" data-i18n="metric-exp">Tajriba</span></div>
+                             <div class="metric"><span class="metric-val">😊 10 000+</span><span class="metric-label" data-i18n="metric-patients">Bemorlar</span></div>
+                         </div>
                     </div>
                     <div class="hero-visual reveal rev-slide-up stagger-2">
                         <div class="hero-tooth">🦷</div>
-                        <div style="position: absolute; top: 0; right: 0; padding: 20px; background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); box-shadow: var(--shadow-soft); max-width: calc(100% - 20px); overflow: hidden;">
-                            <span style="display: block; font-weight: 800; color: var(--primary);">Ближайшее время</span>
-                            <span style="font-size: 14px;">Сегодня в 14:00</span>
-                        </div>
+<div style="position: absolute; top: 0; right: 0; padding: 20px; background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); box-shadow: var(--shadow-soft); max-width: calc(100% - 20px); overflow: hidden;">
+                             <span style="display: block; font-weight: 800; color: var(--primary);">Yaqin vaqt</span>
+                             <span style="font-size: 14px;">Bugun soat 14:00</span>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -111,8 +110,8 @@
         <!-- Partners Bar -->
         <div class="partners">
             <div class="container">
-                <p style="text-align: center; font-weight: 600; color: var(--text-gray); margin-bottom: 30px; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;">
-                    Нам доверяют ведущие организации</p>
+<p style="text-align: center; font-weight: 600; color: var(--text-gray); margin-bottom: 30px; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;">
+                     Yetakchi tashkilotlar bizga ishonadi</p>
                 <div class="partners-track">
                     <div class="partners-scroll">
                         <div class="partner-logo">DentalCorp</div>
@@ -144,18 +143,17 @@
                         {% endif %}
                     </div>
                     <div class="about-content reveal rev-slide-right">
-                        <span class="section-tag" data-i18n="about-tag">О нас</span>
-                        <!-- Dynamic about title from ClinicInfo model -->
-                        <h2 class="section-title" data-i18n="about-title">{% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}Мы создаём красивые улыбки с 2009 года{% endif %}</h2>
-                        <!-- Dynamic about text from ClinicInfo model -->
-                        <p data-i18n="about-desc">{% if clinic_info and clinic_info.about_text %}{{ clinic_info.about_text }}{% else %}В клинике BrightSmile мы сочетаем передовую стоматологию с искренней заботой. Наша современная клиника создана так, чтобы вы чувствовали себя комфортно с первых минут. Мы используем новейшие 3D-визуализацию, лазерную стоматологию и диагностику с ИИ для точности и комфорта каждой процедуры.{% endif %}</p>
-                        <div class="about-list">
-                            <div class="about-item" data-i18n="about-item-1">🔬 Продвинутая 3D-визуализация</div>
-                            <div class="about-item" data-i18n="about-item-2">💆 Комфорт уровня SPA</div>
-                            <div class="about-item" data-i18n="about-item-3">🌱 Экологичная клиника</div>
-                            <div class="about-item" data-i18n="about-item-4">👨‍👩‍👧 Дружелюбная к семьям</div>
-                        </div>
-                        <button class="btn btn-outline" data-i18n="about-btn">Узнать больше →</button>
+<span class="section-tag" data-i18n="about-tag">Biz haqimizda</span>
+                         <!-- Dynamic about title from ClinicInfo model -->
+                         <h2 class="section-title" data-i18n="about-title">{% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}Biz 2009-yildan beri chiroyli tabassumlar yaratamiz{% endif %}</h2>
+                         <!-- Dynamic about text from ClinicInfo model -->
+                         <p data-i18n="about-desc">{% if clinic_info and clinic_info.about_text %}{{ clinic_info.about_text }}{% else %}BrightSmile klinikasida biz ilg'or stomatologiyani samimiy g'amxo'rlik bilan birlashtiramiz. Zamonaviy klinikamiz sizni birinchi daqiqalardanoq o'zingizni qulay his qilishingiz uchun yaratilgan. Har bir protsedurani aniq va qulay o'tkazish uchun eng yangi 3D-vizualizatsiya, lazer stomatologiya va AI diagnostikasidan foydalanamiz.{% endif %}</p>
+                         <div class="about-list">
+                             <div class="about-item" data-i18n="about-item-1">🔬 Ilg'or 3D-vizualizatsiya</div>
+                             <div class="about-item" data-i18n="about-item-2">💆 SPA darajasidagi komfort</div>
+                             <div class="about-item" data-i18n="about-item-3">🌱 Ekologik toza klinika</div>
+                             <div class="about-item" data-i18n="about-item-4">👨‍👩‍👧 Oilalarga do'st</div>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -165,32 +163,40 @@
         <section id="services" class="services">
             <div class="container">
                 <div style="text-align: center;">
-                    <span class="section-tag reveal rev-scale" data-i18n="services-tag">Наши услуги</span>
-                    <h2 class="section-title reveal rev-scale stagger-1" data-i18n="services-title">Комплексные стоматологические решения</h2>
-                    <p class="section-subtitle" style="margin: 0 auto 50px;" data-i18n="services-subtitle">Индивидуальный подход с использованием новейших технологий и методов лечения.</p>
+<span class="section-tag reveal rev-scale" data-i18n="services-tag">Bizning xizmatlar</span>
+                     <h2 class="section-title reveal rev-scale stagger-1" data-i18n="services-title">Kompleks stomatologik yechimlar</h2>
+                     <p class="section-subtitle" style="margin: 0 auto 50px;" data-i18n="services-subtitle">Eng yangi texnologiyalar va davolash usullaridan foydalangan holda individual yondashuv.</p>
                 </div>
                 <div class="services-grid">
                     <!-- Dynamic service cards from Service model -->
-                    {% for service in services %}
-                    <div class="service-card reveal rev-slide-up stagger-{% cycle 1 2 3 1 2 3 %}">
-                        {% if service.icon_image %}
-                        <div class="service-icon">
-                            <img src="{{ service.icon_image.url }}" alt="{{ service.title }}" style="width:40px;height:40px;object-fit:contain;">
-                        </div>
-                        {% else %}
-                        <div class="service-icon">🦷</div>
-                        {% endif %}
-                        <h3 class="service-name">{{ service.title }}</h3>
-                        <p class="service-desc">{{ service.description }}</p>
-                        <a href="#" class="service-link">Подробнее →</a>
-                    </div>
-                    {% empty %}
+{% for service in services %}
+                     <div class="service-card reveal rev-slide-up stagger-{% cycle 1 2 3 1 2 3 %}">
+                         {% if service.icon_image %}
+                         <div class="service-icon">
+                             <img src="{{ service.icon_image.url }}" alt="{{ service.title }}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;">
+                         </div>
+                         {% else %}
+                         <div class="service-icon">🦷</div>
+                         {% endif %}
+                         <h3 class="service-name">{{ service.title }}</h3>
+                         <p class="service-desc">{{ service.description }}</p>
+                     </div>
+                     {% empty %}
                     <!-- Fallback service cards when no services exist in database -->
-                    <div class="service-card reveal rev-slide-up stagger-1">
-                        <div class="service-icon">🦷</div>
-                        <h3 class="service-name">Общая стоматология</h3>
-                        <p class="service-desc">Регулярные осмотры, чистка и профилактическая помощь для здоровья вашей улыбки.</p>
-                        <a href="#" class="service-link">Подробнее →</a>
+<div class="service-card reveal rev-slide-up stagger-1">
+                         <div class="service-icon">🦷</div>
+                         <h3 class="service-name">Umumiy stomatologiya</h3>
+                         <p class="service-desc">Tabassingiz sog'lig'i uchun muntazam tekshiruvlar, tozalash va profilaktik yordam.</p>
+                     </div>
+                     <div class="service-card reveal rev-slide-up stagger-2">
+                         <div class="service-icon">✨</div>
+                         <h3 class="service-name">Tish oqartirish</h3>
+                         <p class="service-desc">Bir tashrifda yorqin va ishonchli tabassum uchun professional protseduralar.</p>
+                     </div>
+                     <div class="service-card reveal rev-slide-up stagger-3">
+                         <div class="service-icon">🔧</div>
+                         <h3 class="service-name">Tish implantlari</h3>
+                         <p class="service-desc">Titan texnologiyalaridan foydalangan holda yo'qolgan tishlar uchun ishonchli va tabiiy yechimlar.</p>
                     </div>
                     <div class="service-card reveal rev-slide-up stagger-2">
                         <div class="service-icon">✨</div>
@@ -219,19 +225,19 @@
                 <div class="stats-grid">
                     <div class="stat-item reveal rev-scale stagger-1">
                         <h3 class="counter" data-target="15">0</h3>
-                        <p data-i18n="stat-exp">Лет опыта</p>
+                        <p data-i18n="stat-exp">Yil tajriba</p>
                     </div>
                     <div class="stat-item reveal rev-scale stagger-2">
                         <h3 class="counter" data-target="10000">0</h3>
-                        <p data-i18n="stat-patients">Счастливых пациентов</p>
+                        <p data-i18n="stat-patients">Baxtli bemorlar</p>
                     </div>
                     <div class="stat-item reveal rev-scale stagger-3">
                         <h3 class="counter" data-target="25">0</h3>
-                        <p data-i18n="stat-experts">Опытных стоматологов</p>
+                        <p data-i18n="stat-experts">Tajribali stomatologlar</p>
                     </div>
                     <div class="stat-item reveal rev-scale stagger-4">
                         <h3 class="counter" data-target="50">0</h3>
-                        <p data-i18n="stat-awards">Отраслевых наград</p>
+                        <p data-i18n="stat-awards">Sanoat mukofotlari</p>
                     </div>
                 </div>
             </div>
@@ -241,31 +247,31 @@
         <section>
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
-                    <span class="section-tag reveal rev-slide-up" data-i18n="process-tag">Ваш путь</span>
-                    <h2 class="section-title reveal rev-slide-up stagger-1" data-i18n="process-title">Как это работает</h2>
-                    <p class="section-subtitle" style="margin: 0 auto;" data-i18n="process-subtitle">Просто, прозрачно и комфортно на каждом этапе.</p>
+<span class="section-tag reveal rev-slide-up" data-i18n="process-tag">Sizning yo'lingiz</span>
+                     <h2 class="section-title reveal rev-slide-up stagger-1" data-i18n="process-title">Bu qanday ishlaydi</h2>
+                     <p class="section-subtitle" style="margin: 0 auto;" data-i18n="process-subtitle">Har bir bosqichda sodda, ochiq va qulay.</p>
                 </div>
                 <div class="process-grid">
                     <div class="process-line"></div>
                     <div class="process-item reveal rev-slide-up stagger-1">
                         <div class="process-num">1</div>
-                        <h4 data-i18n="process-1-title">Запишитесь на визит</h4>
-                        <p data-i18n="process-1-desc">Запишитесь онлайн или позвоните нам. Выберите удобное время.</p>
-                    </div>
-                    <div class="process-item reveal rev-slide-up stagger-2">
-                        <div class="process-num">2</div>
-                        <h4 data-i18n="process-2-title">Комплексный осмотр</h4>
-                        <p data-i18n="process-2-desc">Наши специалисты проводят тщательный осмотр с использованием современной визуализации.</p>
-                    </div>
-                    <div class="process-item reveal rev-slide-up stagger-3">
-                        <div class="process-num">3</div>
-                        <h4 data-i18n="process-3-title">Индивидуальный план</h4>
-                        <p data-i18n="process-3-desc">Мы составим персональный план и подробно объясним каждый шаг.</p>
-                    </div>
-                    <div class="process-item reveal rev-slide-up stagger-4">
-                        <div class="process-num">4</div>
-                        <h4 data-i18n="process-4-title">Ваша новая улыбка</h4>
-                        <p data-i18n="process-4-desc">Получите лечение у экспертов и уйдите с улыбкой, которую вы любите.</p>
+<h4 data-i18n="process-1-title">Tashrif buyuring</h4>
+                         <p data-i18n="process-1-desc">Onlayn yoki qo'ng'iroq orqali yoziling. O'zingizga qulay vaqtni tanlang.</p>
+                     </div>
+                     <div class="process-item reveal rev-slide-up stagger-2">
+                         <div class="process-num">2</div>
+                         <h4 data-i18n="process-2-title">Kompleks tekshiruv</h4>
+                         <p data-i18n="process-2-desc">Mutaxassislarimiz zamonaviy vizualizatsiya yordamida sinchkovlik bilan tekshiradilar.</p>
+                     </div>
+                     <div class="process-item reveal rev-slide-up stagger-3">
+                         <div class="process-num">3</div>
+                         <h4 data-i18n="process-3-title">Individual reja</h4>
+                         <p data-i18n="process-3-desc">Biz shaxsiy reja tuzamiz va har bir qadamni batafsil tushuntiramiz.</p>
+                     </div>
+                     <div class="process-item reveal rev-slide-up stagger-4">
+                         <div class="process-num">4</div>
+                         <h4 data-i18n="process-4-title">Sizning yangi tabassumingiz</h4>
+                         <p data-i18n="process-4-desc">Ekspertlar tomonidan davolanish oling va o'zingiz yoqtirgan tabassum bilan uylaning.</p>
                     </div>
                 </div>
             </div>
@@ -275,9 +281,9 @@
         <section id="gallery" class="bg-light">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
-                    <span class="section-tag reveal rev-scale" data-i18n="gallery-tag">Наши результаты</span>
-                    <h2 class="section-title reveal rev-scale stagger-1" data-i18n="gallery-title">Преображение улыбки</h2>
-                    <p class="section-subtitle" style="margin: 0 auto;" data-i18n="gallery-subtitle">Реальные результаты наших пациентов.</p>
+<span class="section-tag reveal rev-scale" data-i18n="gallery-tag">Bizning natijalar</span>
+                     <h2 class="section-title reveal rev-scale stagger-1" data-i18n="gallery-title">Tabassum o'zgarishi</h2>
+                     <p class="section-subtitle" style="margin: 0 auto;" data-i18n="gallery-subtitle">Bemorlarimizning haqiqiy natijalari.</p>
                 </div>
                 <div class="gallery-grid">
                     <!-- Dynamic gallery images from GalleryImage model -->
@@ -292,24 +298,24 @@
                     </div>
                     {% empty %}
                     <!-- Fallback gallery items when no images exist in database -->
-                    <div class="gallery-item reveal rev-scale stagger-1">
-                        <div>До и после: Отбеливание</div>
-                    </div>
-                    <div class="gallery-item reveal rev-scale stagger-2">
-                        <div>До и после: Виниры</div>
-                    </div>
-                    <div class="gallery-item reveal rev-scale stagger-3">
-                        <div>До и после: Импланты</div>
-                    </div>
-                    <div class="gallery-item reveal rev-scale stagger-1">
-                        <div>До и после: Брекеты</div>
-                    </div>
-                    <div class="gallery-item reveal rev-scale stagger-2">
-                        <div>До и после: Коронки</div>
-                    </div>
-                    <div class="gallery-item reveal rev-scale stagger-3">
-                        <div>До и после: Чистка</div>
-                    </div>
+<div class="gallery-item reveal rev-scale stagger-1">
+                         <div>Oldin va keyin: Oqartirish</div>
+                     </div>
+                     <div class="gallery-item reveal rev-scale stagger-2">
+                         <div>Oldin va keyin: Vinirlar</div>
+                     </div>
+                     <div class="gallery-item reveal rev-scale stagger-3">
+                         <div>Oldin va keyin: Implantlar</div>
+                     </div>
+                     <div class="gallery-item reveal rev-scale stagger-1">
+                         <div>Oldin va keyin: Breketlar</div>
+                     </div>
+                     <div class="gallery-item reveal rev-scale stagger-2">
+                         <div>Oldin va keyin: Kronkalar</div>
+                     </div>
+                     <div class="gallery-item reveal rev-scale stagger-3">
+                         <div>Oldin va keyin: Tozalash</div>
+                     </div>
                     {% endfor %}
                 </div>
             </div>
@@ -319,8 +325,8 @@
         <section id="testimonials" class="testimonials">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
-                    <span class="section-tag reveal rev-flip" data-i18n="testi-tag">Отзывы</span>
-                    <h2 class="section-title reveal rev-flip stagger-1" data-i18n="testi-title">Что говорят наши пациенты</h2>
+<span class="section-tag reveal rev-flip" data-i18n="testi-tag">Sharhlar</span>
+                     <h2 class="section-title reveal rev-flip stagger-1" data-i18n="testi-title">Bemorlarimiz nima deyishadi</h2>
                 </div>
                 <div class="testimonial-grid">
                     <!-- Dynamic testimonial cards from Testimonial model -->
@@ -335,7 +341,7 @@
                                 {% endif %}
                                 <div>
                                     <h4>{{ testimonial.patient_name }}</h4>
-                                    <p>Подтверждённый пациент</p>
+<p>Tasdiqlangan bemor</p>
                                 </div>
                             </div>
                         </div>
@@ -349,12 +355,30 @@
                     <!-- Fallback testimonials when none exist in database -->
                     <div class="testi-card reveal rev-flip stagger-1">
                         <div class="quote-icon">"</div>
-                        <p class="testi-text">"Самый профессиональный визит к стоматологу, который у меня когда-либо был. Персонал невероятно внимательный, а клиника безупречно чистая. Моя новая улыбка — именно то, что я хотела!"</p>
-                        <div class="testi-info">
-                            <h4>Сара Джонсон</h4>
-                            <p>Подтверждённый пациент</p>
-                        </div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
+<p class="testi-text">"Menda bugungi kunga qadar bo'lgan eng professional stomatolog tashrifi. Xodimlar ajoyib darajada diqqatli, klinika esa benuqson toza. Mening yangi tabassumim — aynan men xohlagan narsa!"</p>
+                         <div class="testi-info">
+                             <h4>Sara Jonson</h4>
+                             <p>Tasdiqlangan bemor</p>
+                         </div>
+                         <div class="stars">⭐⭐⭐⭐⭐</div>
+                     </div>
+                     <div class="testi-card reveal rev-flip stagger-2">
+                         <div class="quote-icon">"</div>
+                         <p class="testi-text">"Men har doim stomatologga tashrif buyurishdan oldin asabim oshib ketardi, lekin BrightSmile buni o'zgartirdi. Hammasi batafsil tushuntirildi va maksimal darajada xotirjam muhit yaratildi."</p>
+                         <div class="testi-info">
+                             <h4>Maykl Chen</h4>
+                             <p>Tasdiqlangan bemor</p>
+                         </div>
+                         <div class="stars">⭐⭐⭐⭐⭐</div>
+                     </div>
+                     <div class="testi-card reveal rev-flip stagger-3">
+                         <div class="quote-icon">"</div>
+                         <p class="testi-text">"Birinchi darajali texnologiyalar va ekspertiza. Men bu yerda implant o'rtatdim va jarayon og'riqsiz va silliq o'tdi. Ajoyib, tavsiya qilaman!"</p>
+                         <div class="testi-info">
+                             <h4>Emili Rodriges</h4>
+                             <p>Tasdiqlangan bemor</p>
+                         </div>
+                         <div class="stars">⭐⭐⭐⭐⭐</div>
                     </div>
                     <div class="testi-card reveal rev-flip stagger-2">
                         <div class="quote-icon">"</div>
@@ -383,54 +407,49 @@
         <section id="team">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
-                    <span class="section-tag reveal rev-slide-up" data-i18n="team-tag">Команда экспертов</span>
-                    <h2 class="section-title reveal rev-slide-up stagger-1" data-i18n="team-title">Познакомьтесь с нашими специалистами</h2>
+<span class="section-tag reveal rev-slide-up" data-i18n="team-tag">Ekspertlar jamoasi</span>
+                     <h2 class="section-title reveal rev-slide-up stagger-1" data-i18n="team-title">Mutaxassislarimiz bilan tanishing</h2>
                 </div>
                 <div class="team-grid">
                     <!-- Dynamic doctor cards from Doctor model -->
-                    {% for doctor in doctors %}
-                    <div class="team-card reveal rev-slide-up stagger-{% cycle 1 2 3 4 1 2 3 4 %}">
-                        {% if doctor.photo %}
-                        <div class="team-img">
-                            <img src="{{ doctor.photo.url }}" alt="{{ doctor.full_name }}" style="width:150px;height:150px;border-radius:50%;object-fit:cover;">
-                        </div>
-                        {% else %}
-                        <div class="team-img">{{ doctor.full_name|make_list|first }}</div>
-                        {% endif %}
-                        <h4>{{ doctor.full_name }}</h4>
-                        <span>{{ doctor.specialty }}</span>
-                        <p>{{ doctor.experience_years }}+ years specializing in {{ doctor.specialty|lower }}.</p>
-                        <div class="team-social"><span>In</span><span>Tw</span></div>
-                    </div>
-                    {% empty %}
+{% for doctor in doctors %}
+                     <div class="team-card reveal rev-slide-up stagger-{% cycle 1 2 3 4 1 2 3 4 %}">
+                         {% if doctor.photo %}
+                         <div class="team-img">
+                             <img src="{{ doctor.photo.url }}" alt="{{ doctor.full_name }}" style="width:150px;height:150px;border-radius:50%;object-fit:cover;">
+                         </div>
+                         {% else %}
+                         <div class="team-img">{{ doctor.full_name|make_list|first }}</div>
+                         {% endif %}
+                         <h4>{{ doctor.full_name }}</h4>
+                         <span>{{ doctor.specialty }}</span>
+                         <p>{{ doctor.experience_years }}+ yil {{ doctor.specialty|lower }} bo'yicha.</p>
+                     </div>
+                     {% empty %}
                     <!-- Fallback doctor cards when none exist in database -->
-                    <div class="team-card reveal rev-slide-up stagger-1">
-                        <div class="team-img">ДЖ</div>
-                        <h4>Д-р Джеймс Уилсон</h4>
-                        <span>Ведущий имплантолог</span>
-                        <p>12+ лет опыта в восстановлении зубов.</p>
-                        <div class="team-social"><span>In</span><span>Tw</span></div>
-                    </div>
-                    <div class="team-card reveal rev-slide-up stagger-2">
-                        <div class="team-img">АП</div>
-                        <h4>Д-р Айша Патель</h4>
-                        <span>Ортодонт</span>
-                        <p>Эксперт по современным методам выравнивания.</p>
-                        <div class="team-social"><span>In</span><span>Tw</span></div>
-                    </div>
-                    <div class="team-card reveal rev-slide-up stagger-3">
-                        <div class="team-img">ДК</div>
-                        <h4>Д-р Дэвид Ким</h4>
-                        <span>Косметический стоматолог</span>
-                        <p>Мастер идеальной улыбки.</p>
-                        <div class="team-social"><span>In</span><span>Tw</span></div>
-                    </div>
-                    <div class="team-card reveal rev-slide-up stagger-4">
-                        <div class="team-img">ЛМ</div>
-                        <h4>Д-р Лиза Мюллер</h4>
-                        <span>Детский стоматолог</span>
-                        <p>Делает визиты к стоматологу увлекательными для детей.</p>
-                        <div class="team-social"><span>In</span><span>Tw</span></div>
+<div class="team-card reveal rev-slide-up stagger-1">
+                         <div class="team-img">DJ</div>
+                         <h4>Dr. Jeyms Uilson</h4>
+                         <span>Yetakchi implantolog</span>
+                         <p>12+ yil tishlarni tiklash bo'yicha tajriba.</p>
+                     </div>
+                     <div class="team-card reveal rev-slide-up stagger-2">
+                         <div class="team-img">AP</div>
+                         <h4>Dr. Aysha Patil</h4>
+                         <span>Ortodont</span>
+                         <p>Zamonaviy tekislash usullari bo'yicha ekspert.</p>
+                     </div>
+                     <div class="team-card reveal rev-slide-up stagger-3">
+                         <div class="team-img">DK</div>
+                         <h4>Dr. Devid Kim</h4>
+                         <span>Kosmetik stomatolog</span>
+                         <p>Mukammal tabassum ustasi.</p>
+                     </div>
+                     <div class="team-card reveal rev-slide-up stagger-4">
+                         <div class="team-img">LM</div>
+                         <h4>Dr. Liza Myuller</h4>
+                         <span>Bolalar stomatologi</span>
+                         <p>Bolalar uchun stomatologga tashrifni qiziqarli qiladi.</p>
                     </div>
                     {% endfor %}
                 </div>
@@ -444,9 +463,9 @@
                 <div class="dot" style="width: 6px; height: 6px; bottom: 20%; right: 15%; background: white; animation-duration: 7s;"></div>
             </div>
             <div class="container reveal rev-scale">
-                <h2 data-i18n="cta-title">Готовы преобразить свою улыбку?</h2>
-                <p data-i18n="cta-subtitle">Запишитесь на бесплатную консультацию сегодня и сделайте первый шаг к улыбке, которую вы заслуживаете.</p>
-                <button class="btn btn-white floating-btn open-modal" data-i18n="cta-btn">Записаться на бесплатную консультацию</button>
+<h2 data-i18n="cta-title">Tabassingizni o'zgartirishga tayyormisiz?</h2>
+                 <p data-i18n="cta-subtitle">Bugun bepul konsultatsiyaga yoziling va o'zingizga munosib tabassumga birinchi qadam tashlang.</p>
+                 <button class="btn btn-white floating-btn open-modal" data-i18n="cta-btn">Bepul konsultatsiyaga yozilish</button>
             </div>
         </section>
 
@@ -454,30 +473,30 @@
         <section id="contact">
             <div class="container">
                 <div class="contact-header" style="text-align: center; margin-bottom: 50px;">
-                    <span class="section-tag" data-i18n="contact-tag">Посетите нас</span>
-                    <h2 class="section-title" data-i18n="contact-title">Посетите нашу клинику</h2>
+<span class="section-tag" data-i18n="contact-tag">Bizga tashrif buyuring</span>
+                     <h2 class="section-title" data-i18n="contact-title">Klinikamizga tashrif buyuring</h2>
                 </div>
                 <div class="contact-grid-simple">
                     <!-- Dynamic contact info from ClinicInfo model -->
                     <div class="contact-row reveal rev-slide-up">
                         <div class="contact-icon">📍</div>
                         <div class="contact-text">
-                            <strong>Адрес</strong><br>
-                            <span>{% if clinic_info %}{{ clinic_info.address }}{% else %}ул. Яркая, 123, офис 200, Ташкент, Узбекистан{% endif %}</span>
+<strong>Manzil</strong><br>
+                             <span>{% if clinic_info %}{{ clinic_info.address }}{% else %}Yorqin ko'chasi, 123-uy, 200-xona, Toshkent, O'zbekiston{% endif %}</span>
                         </div>
                     </div>
                     <div class="contact-row reveal rev-slide-up" style="transition-delay: 0.1s;">
                         <div class="contact-icon">📞</div>
                         <div class="contact-text">
-                            <strong>Телефон</strong><br>
-                            <span>{% if clinic_info %}{{ clinic_info.phone }}{% else %}+998 90 123 45 67{% endif %}</span>
+<strong>Telefon</strong><br>
+                             <span>{% if clinic_info %}{{ clinic_info.phone }}{% else %}+998 90 123 45 67{% endif %}</span>
                         </div>
                     </div>
                     <div class="contact-row reveal rev-slide-up" style="transition-delay: 0.3s;">
                         <div class="contact-icon">🕐</div>
                         <div class="contact-text">
-                            <strong>Время работы</strong><br>
-                            <span>{% if clinic_info %}{{ clinic_info.working_hours }}{% else %}Пн–Пт: 8:00–19:00 | Сб: 9:00–16:00{% endif %}</span>
+<strong>Ish vaqti</strong><br>
+                             <span>{% if clinic_info %}{{ clinic_info.working_hours }}{% else %}Dush–Jum: 8:00–19:00 | Shan: 9:00–16:00{% endif %}</span>
                         </div>
                     </div>
                 </div>
@@ -488,10 +507,10 @@
 
     <section id="clinic-map" class="clinic-map-section">
         <div class="container">
-            <div class="contact-header" style="text-align: center; margin-bottom: 24px;">
-                <span class="section-tag">Расположение</span>
-                <h2 class="section-title">Как нас найти</h2>
-            </div>
+<div class="contact-header" style="text-align: center; margin-bottom: 24px;">
+                 <span class="section-tag">Joylashuv</span>
+                 <h2 class="section-title">Bizni qayerdan topish mumkin</h2>
+             </div>
             <div class="map-wrap">
                 <iframe id="clinic-map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d373.12319309098376!2d60.602141425868275!3d41.569557452782206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfc9ec6aff9269%3A0x4c224ee3b60521c0!2sendo-dent!5e0!3m2!1sen!2s!4v1777087968610!5m2!1sen!2s" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Dental Clinic location"></iframe>
             </div>
@@ -504,40 +523,34 @@
             <div class="footer-grid reveal rev-slide-up">
                 <div>
                     <!-- Dynamic clinic name and logo in footer -->
-                    <a href="#" class="footer-logo">🦷 {% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}BrightSmile <span>Стоматология</span>{% endif %}</a>
-                    <p class="footer-text" data-i18n="footer-desc">Предоставляем первоклассную стоматологическую помощь с заботой и использованием современных технологий. Ваш комфорт — наша приоритетная задача.</p>
-                    <!-- Dynamic social media links from ClinicInfo model -->
-                    <div class="footer-social">
-                        {% if clinic_info and clinic_info.facebook_url %}
-                        <a href="{{ clinic_info.facebook_url }}" class="social-link" target="_blank" rel="noopener">Fb</a>
-                        {% else %}
-                        <a href="#" class="social-link">Fb</a>
-                        {% endif %}
-                        {% if clinic_info and clinic_info.instagram_url %}
-                        <a href="{{ clinic_info.instagram_url }}" class="social-link" target="_blank" rel="noopener">Ig</a>
-                        {% else %}
-                        <a href="#" class="social-link">Ig</a>
-                        {% endif %}
-                        {% if clinic_info and clinic_info.youtube_url %}
-                        <a href="{{ clinic_info.youtube_url }}" class="social-link" target="_blank" rel="noopener">Yt</a>
-                        {% else %}
-                        <a href="#" class="social-link">Yt</a>
-                        {% endif %}
-                        <a href="#" class="social-link">Li</a>
-                    </div>
+                    <a href="#" class="footer-logo">🦷 {% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}BrightSmile <span>Stomatologiya</span>{% endif %}</a>
+                    <p class="footer-text" data-i18n="footer-desc">Zamonaviy texnologiyalar va g'amkashlik bilan birinchi darajali stomatologik xizmat ko'rsatamiz. Sizning qulayligingiz — bizning ustuvor vazifamiz.</p>
+<!-- Dynamic social media links from ClinicInfo model -->
+                     <div class="footer-social">
+                         {% if clinic_info and clinic_info.instagram_url %}
+                         <a href="{{ clinic_info.instagram_url }}" class="social-link" target="_blank" rel="noopener">Ig</a>
+                         {% else %}
+                         <a href="#" class="social-link">Ig</a>
+                         {% endif %}
+                         {% if clinic_info and clinic_info.telegram_url %}
+                         <a href="{{ clinic_info.telegram_url }}" class="social-link" target="_blank" rel="noopener">Tg</a>
+                         {% else %}
+                         <a href="#" class="social-link">Tg</a>
+                         {% endif %}
+                     </div>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer-links-title">Быстрые ссылки</h4>
-                    <ul>
-                        <li><a href="#home">Главная</a></li>
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#services">Услуги</a></li>
-                        <li><a href="#gallery">Галерея</a></li>
-                        <li><a href="#contact">Контакты</a></li>
-                    </ul>
+<h4 data-i18n="footer-links-title">Tezkor havolalar</h4>
+                     <ul>
+                         <li><a href="#home">Bosh sahifa</a></li>
+                         <li><a href="#about">Biz haqimizda</a></li>
+                         <li><a href="#services">Xizmatlar</a></li>
+                         <li><a href="#gallery">Galereya</a></li>
+                         <li><a href="#contact">Kontaktlar</a></li>
+                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer-services-title">Наши услуги</h4>
+                    <h4 data-i18n="footer-services-title">Bizning xizmatlar</h4>
                     <ul>
                         <!-- Dynamic service links from Service model in footer -->
                         {% for service in services %}
@@ -545,18 +558,11 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div>
-                    <h4 data-i18n="newsletter-title">Рассылка</h4>
-                    <p class="footer-text" data-i18n="newsletter-desc">Подпишитесь на стоматологические советы и новости клиники.</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Ваш Email">
-                        <button class="btn btn-gold" style="padding: 10px 20px; font-size: 14px;">Подписаться</button>
-                    </div>
-                </div>
-            </div>
+</div>
+             </div>
             <div class="footer-bottom">
-                <p>&copy; {% now "Y" %} {% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}BrightSmile Стоматология{% endif %}. Все права защищены.</p>
-                <p>Политика конфиденциальности | Условия использования</p>
+<p>&copy; {% now "Y" %} {% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}BrightSmile Stomatologiya{% endif %}. Barcha huquqlar himoyalangan.</p>
+                 <p>Maxfiylik siyosati | Foydalanish shartlari</p>
             </div>
         </div>
     </footer>
@@ -570,53 +576,51 @@
             <div class="close-modal">&times;</div>
 
             <div id="modal-form-content">
-                <h2 class="modal-title" data-i18n="modal-title">Запись на приём</h2>
-                <p class="modal-subtitle" data-i18n="modal-subtitle">Заполните данные, и мы свяжемся с вами в течение 1 часа</p>
+<h2 class="modal-title" data-i18n="modal-title">Qabulga yozilish</h2>
+                 <p class="modal-subtitle" data-i18n="modal-subtitle">Ma'lumotlarni to'ldiring va biz 1 soat ichida siz bilan bog'lanamiz</p>
 
                 <!-- Appointment form with id="appointmentForm" for JavaScript interception -->
                 <form id="appointmentForm">
                     <div class="form-group">
-                        <label>Ваше имя</label>
-                        <input type="text" id="book-name" name="full_name" class="form-control" placeholder="Иван Иванов" required>
-                        <div class="error-msg" id="err-name">Это поле обязательно</div>
+<label>Ismingiz</label>
+                         <input type="text" id="book-name" name="full_name" class="form-control" placeholder="Ismingiz Familiyangiz" required>
+                         <div class="error-msg" id="err-name">Bu maydon to'ldirilishi shart</div>
                     </div>
                     <div class="form-group">
-                        <label>Номер телефона</label>
-                        <input type="tel" id="book-phone" name="phone" class="form-control" placeholder="+998 90 123 45 67" required>
-                        <div class="error-msg" id="err-phone">Это поле обязательно</div>
+<label>Telefon raqamingiz</label>
+                         <input type="tel" id="book-phone" name="phone" class="form-control" placeholder="+998 90 123 45 67" required>
+                         <div class="error-msg" id="err-phone">Bu maydon to'ldirilishi shart</div>
                     </div>
                     <div class="form-group">
-                        <label>Желаемая дата</label>
-                        <input type="date" id="book-date" name="preferred_date" class="form-control" required>
-                        <div class="error-msg" id="err-date">Это поле обязательно</div>
+<label>Istalgan sana <span style="color: var(--text-gray); font-weight: 400;">(ixtiyoriy)</span></label>
+                         <input type="date" id="book-date" name="preferred_date" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Желаемое время <span style="color: var(--text-gray); font-weight: 400;">(необязательно)</span></label>
+                        <label>Istalgan vaqt <span style="color: var(--text-gray); font-weight: 400;">(ixtiyoriy)</span></label>
                         <input type="time" id="book-time" name="preferred_time" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Услуга</label>
-                        <!-- Dynamic service dropdown from Service model -->
-                        <select id="book-service" name="service" class="form-control" required>
-                            <option value="" disabled selected>Выберите услугу...</option>
+<label>Xizmat <span style="color: var(--text-gray); font-weight: 400;">(ixtiyoriy)</span></label>
+                         <!-- Dynamic service dropdown from Service model -->
+                         <select id="book-service" name="service" class="form-control">
+                             <option value="" disabled selected>Xizmatni tanlang...</option>
                             {% for service in services %}
                             <option value="{{ service.id }}">{{ service.title }}</option>
                             {% endfor %}
-                        </select>
-                        <div class="error-msg" id="err-service">Это поле обязательно</div>
-                    </div>
+</select>
+                     </div>
                     <div class="form-group">
-                        <label for="book-comment">Комментарий (необязательно)</label>
-                        <textarea id="book-comment" name="message" class="form-control" rows="3" placeholder="Дополнительные детали..."></textarea>
+                        <label for="book-comment">Izoh (ixtiyoriy)</label>
+                        <textarea id="book-comment" name="message" class="form-control" rows="3" placeholder="Qo'shimcha tafsilotlar..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 10px;">Отправить ✨</button>
+                    <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 10px;">Yuborish ✨</button>
                 </form>
             </div>
 
             <div id="modal-success-content" class="success-content">
                 <span class="success-icon">✅</span>
-                <h2 class="success-title">Отправлено!</h2>
-                <p>Мы получили вашу заявку. Скоро свяжемся с вами для подтверждения!</p>
+<h2 class="success-title">Yuborildi!</h2>
+                 <p>Biz sizning arizangizni qabul qildik. Tez orada tasdiqlash uchun siz bilan bog'lanamiz!</p>
             </div>
         </div>
     </div>

@@ -140,11 +140,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # ─────────────────────────────────────────────
 
 # Default language code for the site
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'Asia/Tashkent'
 
-USE_I18N = False
+USE_I18N = True
 
 USE_TZ = True
 
@@ -196,9 +196,11 @@ if not DEBUG:
 # UNFOLD replaces the default Django admin with a modern, responsive interface.
 # This configuration controls the sidebar, branding, colors, and navigation.
 UNFOLD = {
+    # ── Custom admin site ────────────────
+    "SITE_CLASS": "apps.ClinicApp.admin_site.CustomAdminSite",
     # ── Branding ──────────────────────────
-    "SITE_TITLE": "PearlSmile Admin",
-    "SITE_HEADER": "PearlSmile Dental Clinic",
+    "SITE_TITLE": "PearlSmile Boshqaruv",
+    "SITE_HEADER": "PearlSmile Stomatologiya",
     "SITE_LOGO": lambda request: staticfiles_storage.url("ClinicAppStatic/logo.svg"),
     "SITE_LOGO_DARK": lambda request: staticfiles_storage.url("ClinicAppStatic/logo.svg"),
     "SITE_FAVICON": lambda request: staticfiles_storage.url("ClinicAppStatic/favicon.ico"),
@@ -206,6 +208,7 @@ UNFOLD = {
     # ── Styles ────────────────────────────
     "STYLES": [
         lambda request: staticfiles_storage.url("ClinicAppStatic/admin_actions.css"),
+        lambda request: staticfiles_storage.url("ClinicAppStatic/admin_hide_password.css"),
     ],
 
     # ── Color Theme ───────────────────────
@@ -268,11 +271,7 @@ UNFOLD = {
                         "icon": "star",
                         "link": reverse_lazy("admin:ClinicApp_testimonial_changelist"),
                     },
-                    {
-                        "title": "FAQ",
-                        "icon": "help",
-                        "link": reverse_lazy("admin:ClinicApp_faq_changelist"),
-                    },
+
                 ],
             },
             # ── Appointments group ──
@@ -289,18 +288,7 @@ UNFOLD = {
                     },
                 ],
             },
-            # ── System group ──
-            {
-                "title": "System",
-                "separator": True,
-                "items": [
-                    {
-                        "title": "Users",
-                        "icon": "person",
-                        "link": reverse_lazy("admin:auth_user_changelist"),
-                    },
-                ],
-            },
+
         ],
     },
 }

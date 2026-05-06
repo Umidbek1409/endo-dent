@@ -22,9 +22,18 @@ from .models import (
     Testimonial,
     GalleryImage,
     ClinicInfo,
-    FAQ,
     Appointment,
 )
+
+# Import custom admin site
+from .admin_site import custom_site
+
+# Unregister User model to hide from admin
+from django.contrib.auth.models import User
+try:
+    custom_site.unregister(User)
+except:
+    pass
 
 
 def get_unread_appointments_count(request: HttpRequest) -> str:
@@ -71,7 +80,6 @@ class BaseAdmin(ModelAdmin):
     action_buttons.admin_order_field = None
 
 
-@admin.register(HeroSection)
 class HeroSectionAdmin(BaseAdmin):
     list_display = ("headline", "button_text", "is_active", "action_buttons")
     list_display_links = ("headline",)
@@ -84,8 +92,19 @@ class HeroSectionAdmin(BaseAdmin):
         (_("Status"), {"fields": ("is_active",)}),
     )
 
+    def has_add_permission(self, request):
+        return HeroSection.objects.count() < 1
 
-@admin.register(Service)
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def changelist_view(self, request, extra_context=None):
+        if HeroSection.objects.count() == 1:
+            obj = HeroSection.objects.first()
+            return redirect(reverse("admin:ClinicApp_herosection_change", args=[obj.pk]))
+        return super().changelist_view(request, extra_context)
+
+
 class ServiceAdmin(BaseAdmin):
     list_display = ("title", "icon_thumbnail", "order", "is_visible", "action_buttons")
     list_display_links = ("title",)
@@ -108,7 +127,6 @@ class ServiceAdmin(BaseAdmin):
         return "—"
 
 
-@admin.register(Doctor)
 class DoctorAdmin(BaseAdmin):
     list_display = ("photo_thumbnail", "full_name", "specialty", "experience_years", "order", "is_visible", "action_buttons")
     list_display_links = ("full_name",)
@@ -132,7 +150,6 @@ class DoctorAdmin(BaseAdmin):
         return "—"
 
 
-@admin.register(Testimonial)
 class TestimonialAdmin(BaseAdmin):
     list_display = ("patient_name", "rating_stars", "is_visible", "action_buttons")
     list_display_links = ("patient_name",)
@@ -154,7 +171,6 @@ class TestimonialAdmin(BaseAdmin):
         )
 
 
-@admin.register(GalleryImage)
 class GalleryImageAdmin(BaseAdmin):
     list_display = ("image_thumbnail", "caption", "order", "is_visible", "action_buttons")
     list_display_links = ("caption",)
@@ -177,30 +193,14 @@ class GalleryImageAdmin(BaseAdmin):
         return "—"
 
 
-@admin.register(ClinicInfo)
 class ClinicInfoAdmin(BaseAdmin):
-    list_display = ("clinic_name", "phone", "email", "logo_thumbnail", "action_buttons")
+    list_display = ("clinic_name", "phone", "email", "action_buttons")
     list_display_links = ("clinic_name",)
     fieldsets = (
         (_("Basic Info"), {"fields": ("clinic_name", "address", "phone", "working_hours")}),
-        (_("Branding"), {"fields": ("logo",)}),
-        (_("Social Media"), {"fields": ("facebook_url", "instagram_url", "youtube_url")}),
+        (_("Social Media"), {"fields": ("instagram_url", "telegram_url")}),
         (_("About Section"), {"fields": ("about_text", "about_image")}),
-        (_("Telegram Notifications"), {
-            "classes": ("collapse",),
-            "fields": ("telegram_bot_token", "telegram_chat_id"),
-            "description": _("Enter your Telegram Bot Token (from @BotFather) and Group/Channel ID to receive appointment notifications."),
-        }),
     )
-
-    @display(description=_("Logo"))
-    def logo_thumbnail(self, obj):
-        if obj.logo:
-            return format_html(
-                '<img src="{}" width="60" height="40" style="border-radius:8px;object-fit:contain;" />',
-                obj.logo.url
-            )
-        return "—"
 
     def has_add_permission(self, request):
         return ClinicInfo.objects.count() < 1
@@ -215,21 +215,6 @@ class ClinicInfoAdmin(BaseAdmin):
         return super().changelist_view(request, extra_context)
 
 
-@admin.register(FAQ)
-class FAQAdmin(BaseAdmin):
-    list_display = ("question", "order", "is_visible", "action_buttons")
-    list_display_links = ("question",)
-    list_editable = ("order", "is_visible")
-    list_filter = ("is_visible",)
-    search_fields = ("question", "answer")
-    ordering = ("order",)
-    fieldsets = (
-        (_("Question & Answer"), {"fields": ("question", "answer")}),
-        (_("Display"), {"fields": ("order", "is_visible")}),
-    )
-
-
-@admin.register(Appointment)
 class AppointmentAdmin(ModelAdmin):
     list_display = ("full_name", "phone", "service", "preferred_date", "submitted_at", "is_read_badge", "action_buttons")
     list_display_links = ("full_name",)
@@ -289,3 +274,13 @@ class AppointmentAdmin(ModelAdmin):
     def mark_as_read(self, request, queryset):
         updated = queryset.update(is_read=True)
         self.message_user(request, _(f"{updated} appointment(s) marked as read."))
+
+
+# Register all models with custom_site
+custom_site.register(HeroSection, HeroSectionAdmin)
+custom_site.register(Service, ServiceAdmin)
+custom_site.register(Doctor, DoctorAdmin)
+custom_site.register(Testimonial, TestimonialAdmin)
+custom_site.register(GalleryImage, GalleryImageAdmin)
+custom_site.register(ClinicInfo, ClinicInfoAdmin)
+custom_site.register(Appointment, AppointmentAdmin)

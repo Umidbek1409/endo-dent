@@ -210,14 +210,12 @@ appForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     let isValid = true;
 
-    // Define all required form fields with their element IDs and error message IDs
-    // Time and email fields are optional — not included here
-    const fields = [
-        { id: 'book-name', err: 'err-name' },
-        { id: 'book-phone', err: 'err-phone' },
-        { id: 'book-date', err: 'err-date' },
-        { id: 'book-service', err: 'err-service' }
-    ];
+// Define all required form fields with their element IDs and error message IDs
+     // Time, date, service and email fields are optional — not included here
+     const fields = [
+         { id: 'book-name', err: 'err-name' },
+         { id: 'book-phone', err: 'err-phone' }
+     ];
 
     const formData = {};
 
@@ -252,7 +250,7 @@ appForm.addEventListener('submit', async (e) => {
         // Disable the submit button to prevent duplicate submissions
         const submitBtn = appForm.querySelector('button[type="submit"]');
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
+        submitBtn.textContent = "Yuborilmoqda...";
 
         try {
             // Send the form data to the Django API endpoint as JSON
@@ -284,16 +282,16 @@ appForm.addEventListener('submit', async (e) => {
                 setTimeout(closeFunc, 4000);
             } else {
                 // On server error: show error message to the user
-                alert('Ошибка: ' + (result.error || 'Не удалось отправить заявку. Попробуйте ещё раз.'));
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Отправить ✨';
+alert("Xatolik: " + (result.error || "Ariza yuborilmadi. Qaytadan urinib ko'ring."));
+                 submitBtn.disabled = false;
+                 submitBtn.textContent = "Yuborish ✨";
             }
         } catch (error) {
             // On network error: show error message to the user
             console.error("Error submitting form:", error);
-            alert('Ошибка сети. Проверьте подключение и попробуйте снова.');
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Отправить ✨';
+alert("Tarmoq xatoligi. Ulanishni tekshiring va qaytadan urinib ko'ring.");
+             submitBtn.disabled = false;
+             submitBtn.textContent = "Yuborish ✨";
         }
     }
 });

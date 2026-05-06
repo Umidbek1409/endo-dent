@@ -525,3 +525,6 @@ msgstr "ADMIN_PASSWORD o'rnatilmagan. Superuser yaratilmadi."
 
 msgid "Superuser '{}' created successfully!"
 msgstr "Superuser '{}' muvaffaqiyatli yaratildi!"
+
+msgid "Change password"
+msgstr "Parolni o'zgartirish"

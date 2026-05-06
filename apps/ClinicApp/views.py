@@ -24,7 +24,6 @@ from .models import (
     ClinicInfo,
     Appointment,
 )
-from .telegram import notify_appointment
 
 logger = logging.getLogger(__name__)
 
@@ -96,9 +95,6 @@ def submit_appointment(request):
             service=service_obj,
             message=message,
         )
-
-        # Send notification to Telegram (non-blocking, errors are logged)
-        notify_appointment(appointment)
 
         return JsonResponse({'success': True})
 

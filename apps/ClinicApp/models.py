@@ -45,6 +45,14 @@ class HeroSection(models.Model):
     def __str__(self):
         return self.headline
 
+    def save(self, *args, **kwargs):
+        """
+        Override save to ensure only one HeroSection record exists.
+        If one already exists, update it instead of creating a new one.
+        """
+        self.pk = 1  # Force primary key to 1 (singleton pattern)
+        super().save(*args, **kwargs)
+
 
 # ─────────────────────────────────────────────
 # Service
@@ -57,7 +65,9 @@ class Service(models.Model):
         help_text=_("Service name as it appears on the website, e.g. 'General Dentistry'")
     )
     description = models.TextField(
-        help_text=_("Short description of the service shown on the service card")
+        blank=True,
+        null=True,
+        help_text=_("Short description of the service shown on the service card (optional)")
     )
     icon_image = models.ImageField(
         upload_to='services/',
@@ -98,7 +108,9 @@ class Doctor(models.Model):
         help_text=_("Medical specialty, e.g. 'Lead Implantologist' or 'Orthodontics Specialist'")
     )
     bio = models.TextField(
-        help_text=_("Short biography or description shown below the doctor's name")
+        blank=True,
+        null=True,
+        help_text=_("Short biography or description shown below the doctor's name (optional)")
     )
     photo = models.ImageField(
         upload_to='doctors/',
@@ -110,8 +122,10 @@ class Doctor(models.Model):
         help_text=_("Number of years of professional experience, e.g. 7")
     )
     order = models.PositiveIntegerField(
+        blank=True,
+        null=True,
         default=0,
-        help_text=_("Display order — lower numbers appear first on the website (e.g. 1, 2, 3)")
+        help_text=_("Display order — lower numbers appear first on the website (e.g. 1, 2, 3) (optional)")
     )
     is_visible = models.BooleanField(
         default=True,
@@ -224,26 +238,15 @@ class ClinicInfo(models.Model):
     working_hours = models.TextField(
         help_text=_("Operating hours, e.g. 'Mon–Fri: 8AM–7PM | Sat: 9AM–4PM'")
     )
-    logo = models.ImageField(
-        upload_to='branding/',
-        blank=True,
-        null=True,
-        help_text=_("Clinic logo image displayed in the navigation bar and footer. Recommended: transparent PNG, 200x60px. Leave empty for text-based logo.")
-    )
-    facebook_url = models.URLField(
-        blank=True,
-        default='',
-        help_text=_("Full URL to the clinic's Facebook page. Leave empty to hide the Facebook link.")
-    )
     instagram_url = models.URLField(
         blank=True,
         default='',
         help_text=_("Full URL to the clinic's Instagram page. Leave empty to hide the Instagram link.")
     )
-    youtube_url = models.URLField(
+    telegram_url = models.URLField(
         blank=True,
         default='',
-        help_text=_("Full URL to the clinic's YouTube channel. Leave empty to hide the YouTube link.")
+        help_text=_("Full URL to the clinic's Telegram channel. Leave empty to hide the Telegram link.")
     )
     about_text = models.TextField(
         help_text=_("About section text describing the clinic's history, mission, and values")
@@ -254,18 +257,7 @@ class ClinicInfo(models.Model):
         null=True,
         help_text=_("Image displayed in the About section. Recommended: 800x600px. Leave empty for gradient placeholder.")
     )
-    telegram_bot_token = models.CharField(
-        max_length=200,
-        blank=True,
-        default='',
-        help_text=_("Telegram Bot Token from @BotFather, e.g. '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11'")
-    )
-    telegram_chat_id = models.CharField(
-        max_length=100,
-        blank=True,
-        default='',
-        help_text=_("Telegram Group/Channel ID where notifications are sent, e.g. '-1001234567890'")
-    )
+
 
     class Meta:
         verbose_name = _("Clinic Information")
@@ -283,37 +275,7 @@ class ClinicInfo(models.Model):
         super().save(*args, **kwargs)
 
 
-# ─────────────────────────────────────────────
-# FAQ
-# ─────────────────────────────────────────────
-# Stores frequently asked questions and answers.
-class FAQ(models.Model):
-    question = models.CharField(
-        max_length=300,
-        help_text=_("The FAQ question text, e.g. 'Do you accept dental insurance?'")
-    )
-    answer = models.TextField(
-        help_text=_("The detailed answer to the question")
-    )
-    order = models.PositiveIntegerField(
-        default=0,
-        help_text=_("Display order — lower numbers appear first on the website (e.g. 1, 2, 3)")
-    )
-    is_visible = models.BooleanField(
-        default=True,
-        help_text=_("Uncheck to hide this FAQ from the website without deleting it")
-    )
-
-    class Meta:
-        ordering = ['order']
-        verbose_name = _("FAQ")
-        verbose_name_plural = _("FAQs")
-
-    def __str__(self):
-        return self.question
-
-
-# ─────────────────────────────────────────────
+# ─────────────────────────────────────
 # Appointment
 # ─────────────────────────────────────────────
 # Stores appointment requests submitted through the website form.

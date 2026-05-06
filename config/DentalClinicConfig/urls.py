@@ -9,12 +9,13 @@ Defines the main URL routing for the entire Django project:
 
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib import admin
 from django.urls import include, path
 
+from apps.ClinicApp.admin_site import custom_site
+
 urlpatterns = [
-    # Unfold admin panel: accessible at /admin/
-    path('admin/', admin.site.urls),
+    # Unfold-enhaced Django admin panel: accessible at /admin/
+    path('admin/', custom_site.urls),
     # Include all URL patterns from the ClinicApp at the root path
     path('', include('apps.ClinicApp.urls')),
 ]
