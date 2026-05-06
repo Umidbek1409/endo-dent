@@ -150,5 +150,36 @@
         </a>
     </div>
 
+    <!-- ── Quick Add Section (Mobile Friendly) ── -->
+    <div>
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">{% trans "Quick Add" %}</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            <a href="{% url 'admin:ClinicApp_herosection_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
+                <span class="material-symbols-outlined text-primary-500 text-2xl">add_a_photo</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add Hero" %}</span>
+            </a>
+            <a href="{% url 'admin:ClinicApp_service_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
+                <span class="material-symbols-outlined text-primary-500 text-2xl">medical_services</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add Service" %}</span>
+            </a>
+            <a href="{% url 'admin:ClinicApp_doctor_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
+                <span class="material-symbols-outlined text-primary-500 text-2xl">person_add</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add Doctor" %}</span>
+            </a>
+            <a href="{% url 'admin:ClinicApp_testimonial_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
+                <span class="material-symbols-outlined text-primary-500 text-2xl">rate_review</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add Review" %}</span>
+            </a>
+            <a href="{% url 'admin:ClinicApp_galleryimage_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
+                <span class="material-symbols-outlined text-primary-500 text-2xl">add_photo_alternate</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add Photo" %}</span>
+            </a>
+            <a href="{% url 'admin:ClinicApp_faq_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
+                <span class="material-symbols-outlined text-primary-500 text-2xl">quiz</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add FAQ" %}</span>
+            </a>
+        </div>
+    </div>
+
 </div>
 {% endblock %}

@@ -388,11 +388,40 @@ img[src$=".svg"] {
         max-width: 100% !important;
     }
 
-    /* Object tools: stack */
+    /* Object tools: stack and make add button prominent */
     .object-tools {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 4px !important;
+        gap: 8px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .object-tools li {
+        margin: 0 !important;
+    }
+
+    .object-tools a {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 10px 16px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+        background-color: #2563eb !important;
+        color: white !important;
+        text-decoration: none !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    }
+
+    .object-tools a:hover {
+        background-color: #1d4ed8 !important;
+    }
+
+    .object-tools .addlink::before {
+        content: "+" !important;
+        font-size: 18px !important;
+        font-weight: bold !important;
     }
 
     /* Breadcrumbs: wrap */
