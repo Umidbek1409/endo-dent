@@ -248,6 +248,18 @@ class ClinicInfo(models.Model):
         default='',
         help_text=_("Full URL to the clinic's Telegram channel. Leave empty to hide the Telegram link.")
     )
+    telegram_bot_token = models.CharField(
+        max_length=200,
+        blank=True,
+        default='',
+        help_text=_("Telegram Bot Token from @BotFather, e.g. '123456789:ABCdefGHIjklMNOpqrsTUVwxyz'")
+    )
+    telegram_chat_id = models.CharField(
+        max_length=50,
+        blank=True,
+        default='',
+        help_text=_("Your personal Telegram Chat ID to receive appointment notifications. Get it from @userinfobot")
+    )
     about_text = models.TextField(
         help_text=_("About section text describing the clinic's history, mission, and values")
     )
@@ -289,13 +301,10 @@ class Appointment(models.Model):
         max_length=50,
         help_text=_("Patient's phone number for callback confirmation")
     )
-    email = models.EmailField(
-        blank=True,
-        default='',
-        help_text=_("Patient's email address (optional)")
-    )
     preferred_date = models.DateField(
-        help_text=_("The date the patient requested for their appointment")
+        blank=True,
+        null=True,
+        help_text=_("The date the patient requested for their appointment (optional)")
     )
     preferred_time = models.CharField(
         max_length=50,

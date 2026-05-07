@@ -199,6 +199,7 @@ class ClinicInfoAdmin(BaseAdmin):
     fieldsets = (
         (_("Basic Info"), {"fields": ("clinic_name", "address", "phone", "working_hours")}),
         (_("Social Media"), {"fields": ("instagram_url", "telegram_url")}),
+        (_("Telegram Notifications"), {"fields": ("telegram_bot_token", "telegram_chat_id"), "description": _("Configure Telegram bot to receive appointment notifications to your personal chat")}),
         (_("About Section"), {"fields": ("about_text", "about_image")}),
     )
 
@@ -219,11 +220,11 @@ class AppointmentAdmin(ModelAdmin):
     list_display = ("full_name", "phone", "service", "preferred_date", "submitted_at", "is_read_badge", "action_buttons")
     list_display_links = ("full_name",)
     list_filter = ("is_read", "preferred_date", "service")
-    search_fields = ("full_name", "phone", "email")
-    readonly_fields = ("full_name", "phone", "email", "preferred_date", "preferred_time", "service", "message", "submitted_at")
+    search_fields = ("full_name", "phone")
+    readonly_fields = ("full_name", "phone", "preferred_date", "preferred_time", "service", "message", "submitted_at")
     actions = ["mark_as_read"]
     fieldsets = (
-        (_("Patient Details"), {"fields": ("full_name", "phone", "email")}),
+        (_("Patient Details"), {"fields": ("full_name", "phone")}),
         (_("Appointment Request"), {"fields": ("preferred_date", "preferred_time", "service")}),
         (_("Additional Info"), {"fields": ("message", "submitted_at")}),
         (_("Status"), {"fields": ("is_read",)}),
