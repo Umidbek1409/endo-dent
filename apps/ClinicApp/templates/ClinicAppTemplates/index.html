@@ -81,19 +81,19 @@
             <div class="container">
                 <div class="hero-flex">
                     <div class="hero-content reveal rev-slide-up">
-<div class="hero-badge" data-i18n="hero-badge">✨ Shahardagi #1 stomatologiya klinikasi</div>
+<div class="hero-badge">✨ Shahardagi #1 stomatologiya klinikasi</div>
                          <!-- Dynamic hero headline from HeroSection model -->
-                         <h1 class="hero-title" data-i18n="hero-title">{% if hero %}{{ hero.headline }}{% else %}Sizning mukammal tabassumingiz shu yerda boshlanadi{% endif %}</h1>
+                         <h1 class="hero-title">{% if hero %}{{ hero.headline }}{% else %}Sizning mukammal tabassumingiz shu yerda boshlanadi{% endif %}</h1>
                          <!-- Dynamic hero subheadline from HeroSection model -->
-                         <p class="hero-subtitle" data-i18n="hero-subtitle">{% if hero %}{{ hero.subheadline }}{% else %}Zamonaviy texnologiyalar, g'amkash mutaxassislar va qulay muhit bilan jahon darajasidagi stomatologik xizmat oling. Biz har bir tashrifni qulay, har bir tabassumni esa unutilmas qilamiz.{% endif %}</p>
+                         <p class="hero-subtitle">{% if hero %}{{ hero.subheadline }}{% else %}Zamonaviy texnologiyalar, g'amkash mutaxassislar va qulay muhit bilan jahon darajasidagi stomatologik xizmat oling. Biz har bir tashrifni qulay, har bir tabassumni esa unutilmas qilamiz.{% endif %}</p>
 <div class="hero-btns">
                               <!-- Dynamic hero button text from HeroSection model -->
-                              <button class="btn btn-gold open-modal" data-i18n="book-btn">{% if hero %}{{ hero.button_text }}{% else %}Qabulga yozilish{% endif %}</button>
+                              <button class="btn btn-gold open-modal">{% if hero %}{{ hero.button_text }}{% else %}Qabulga yozilish{% endif %}</button>
                           </div>
                          <div class="trust-metrics">
-                             <div class="metric"><span class="metric-val">⭐ 4.9/5</span><span class="metric-label" data-i18n="metric-rating">Reyting</span></div>
-                             <div class="metric"><span class="metric-val">🏆 15+ yil</span><span class="metric-label" data-i18n="metric-exp">Tajriba</span></div>
-                             <div class="metric"><span class="metric-val">😊 10 000+</span><span class="metric-label" data-i18n="metric-patients">Bemorlar</span></div>
+                             <div class="metric"><span class="metric-val">⭐ 4.9/5</span><span class="metric-label">Reyting</span></div>
+                             <div class="metric"><span class="metric-val">🏆 15+ yil</span><span class="metric-label">Tajriba</span></div>
+                             <div class="metric"><span class="metric-val">😊 10 000+</span><span class="metric-label">Bemorlar</span></div>
                          </div>
                     </div>
                     <div class="hero-visual reveal rev-slide-up stagger-2">
@@ -143,16 +143,16 @@
                         {% endif %}
                     </div>
                     <div class="about-content reveal rev-slide-right">
-<span class="section-tag" data-i18n="about-tag">Biz haqimizda</span>
+<span class="section-tag">Biz haqimizda</span>
                          <!-- Dynamic about title from ClinicInfo model -->
-                         <h2 class="section-title" data-i18n="about-title">{% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}Biz 2009-yildan beri chiroyli tabassumlar yaratamiz{% endif %}</h2>
+                         <h2 class="section-title">{% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}Biz 2009-yildan beri chiroyli tabassumlar yaratamiz{% endif %}</h2>
                          <!-- Dynamic about text from ClinicInfo model -->
-                         <p data-i18n="about-desc">{% if clinic_info and clinic_info.about_text %}{{ clinic_info.about_text }}{% else %}BrightSmile klinikasida biz ilg'or stomatologiyani samimiy g'amxo'rlik bilan birlashtiramiz. Zamonaviy klinikamiz sizni birinchi daqiqalardanoq o'zingizni qulay his qilishingiz uchun yaratilgan. Har bir protsedurani aniq va qulay o'tkazish uchun eng yangi 3D-vizualizatsiya, lazer stomatologiya va AI diagnostikasidan foydalanamiz.{% endif %}</p>
+                         <p>{% if clinic_info and clinic_info.about_text %}{{ clinic_info.about_text }}{% else %}BrightSmile klinikasida biz ilg'or stomatologiyani samimiy g'amxo'rlik bilan birlashtiramiz. Zamonaviy klinikamiz sizni birinchi daqiqalardanoq o'zingizni qulay his qilishingiz uchun yaratilgan. Har bir protsedurani aniq va qulay o'tkazish uchun eng yangi 3D-vizualizatsiya, lazer stomatologiya va AI diagnostikasidan foydalanamiz.{% endif %}</p>
                          <div class="about-list">
-                             <div class="about-item" data-i18n="about-item-1">🔬 Ilg'or 3D-vizualizatsiya</div>
-                             <div class="about-item" data-i18n="about-item-2">💆 SPA darajasidagi komfort</div>
-                             <div class="about-item" data-i18n="about-item-3">🌱 Ekologik toza klinika</div>
-                             <div class="about-item" data-i18n="about-item-4">👨‍👩‍👧 Oilalarga do'st</div>
+                             <div class="about-item">🔬 Ilg'or 3D-vizualizatsiya</div>
+                             <div class="about-item">💆 SPA darajasidagi komfort</div>
+                             <div class="about-item">🌱 Ekologik toza klinika</div>
+                             <div class="about-item">👨‍👩‍👧 Oilalarga do'st</div>
                          </div>
                     </div>
                 </div>
@@ -163,9 +163,9 @@
         <section id="services" class="services">
             <div class="container">
                 <div style="text-align: center;">
-<span class="section-tag reveal rev-scale" data-i18n="services-tag">Bizning xizmatlar</span>
-                     <h2 class="section-title reveal rev-scale stagger-1" data-i18n="services-title">Kompleks stomatologik yechimlar</h2>
-                     <p class="section-subtitle" style="margin: 0 auto 50px;" data-i18n="services-subtitle">Eng yangi texnologiyalar va davolash usullaridan foydalangan holda individual yondashuv.</p>
+<span class="section-tag reveal rev-scale">Bizning xizmatlar</span>
+                     <h2 class="section-title reveal rev-scale stagger-1">Kompleks stomatologik yechimlar</h2>
+                     <p class="section-subtitle" style="margin: 0 auto 50px;">Eng yangi texnologiyalar va davolash usullaridan foydalangan holda individual yondashuv.</p>
                 </div>
                 <div class="services-grid">
                     <!-- Dynamic service cards from Service model -->
@@ -225,19 +225,19 @@
                 <div class="stats-grid">
                     <div class="stat-item reveal rev-scale stagger-1">
                         <h3 class="counter" data-target="15">0</h3>
-                        <p data-i18n="stat-exp">Yil tajriba</p>
+                        <p>Yil tajriba</p>
                     </div>
                     <div class="stat-item reveal rev-scale stagger-2">
                         <h3 class="counter" data-target="10000">0</h3>
-                        <p data-i18n="stat-patients">Baxtli bemorlar</p>
+                        <p>Baxtli bemorlar</p>
                     </div>
                     <div class="stat-item reveal rev-scale stagger-3">
                         <h3 class="counter" data-target="25">0</h3>
-                        <p data-i18n="stat-experts">Tajribali stomatologlar</p>
+                        <p>Tajribali stomatologlar</p>
                     </div>
                     <div class="stat-item reveal rev-scale stagger-4">
                         <h3 class="counter" data-target="50">0</h3>
-                        <p data-i18n="stat-awards">Sanoat mukofotlari</p>
+                        <p>Sanoat mukofotlari</p>
                     </div>
                 </div>
             </div>
@@ -247,31 +247,31 @@
         <section>
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
-<span class="section-tag reveal rev-slide-up" data-i18n="process-tag">Sizning yo'lingiz</span>
-                     <h2 class="section-title reveal rev-slide-up stagger-1" data-i18n="process-title">Bu qanday ishlaydi</h2>
-                     <p class="section-subtitle" style="margin: 0 auto;" data-i18n="process-subtitle">Har bir bosqichda sodda, ochiq va qulay.</p>
+<span class="section-tag reveal rev-slide-up">Sizning yo'lingiz</span>
+                     <h2 class="section-title reveal rev-slide-up stagger-1">Bu qanday ishlaydi</h2>
+                     <p class="section-subtitle" style="margin: 0 auto;">Har bir bosqichda sodda, ochiq va qulay.</p>
                 </div>
                 <div class="process-grid">
                     <div class="process-line"></div>
                     <div class="process-item reveal rev-slide-up stagger-1">
                         <div class="process-num">1</div>
-<h4 data-i18n="process-1-title">Tashrif buyuring</h4>
-                         <p data-i18n="process-1-desc">Onlayn yoki qo'ng'iroq orqali yoziling. O'zingizga qulay vaqtni tanlang.</p>
+<h4>Tashrif buyuring</h4>
+                         <p>Onlayn yoki qo'ng'iroq orqali yoziling. O'zingizga qulay vaqtni tanlang.</p>
                      </div>
                      <div class="process-item reveal rev-slide-up stagger-2">
                          <div class="process-num">2</div>
-                         <h4 data-i18n="process-2-title">Kompleks tekshiruv</h4>
-                         <p data-i18n="process-2-desc">Mutaxassislarimiz zamonaviy vizualizatsiya yordamida sinchkovlik bilan tekshiradilar.</p>
+                         <h4>Kompleks tekshiruv</h4>
+                         <p>Mutaxassislarimiz zamonaviy vizualizatsiya yordamida sinchkovlik bilan tekshiradilar.</p>
                      </div>
                      <div class="process-item reveal rev-slide-up stagger-3">
                          <div class="process-num">3</div>
-                         <h4 data-i18n="process-3-title">Individual reja</h4>
-                         <p data-i18n="process-3-desc">Biz shaxsiy reja tuzamiz va har bir qadamni batafsil tushuntiramiz.</p>
+                         <h4>Individual reja</h4>
+                         <p>Biz shaxsiy reja tuzamiz va har bir qadamni batafsil tushuntiramiz.</p>
                      </div>
                      <div class="process-item reveal rev-slide-up stagger-4">
                          <div class="process-num">4</div>
-                         <h4 data-i18n="process-4-title">Sizning yangi tabassumingiz</h4>
-                         <p data-i18n="process-4-desc">Ekspertlar tomonidan davolanish oling va o'zingiz yoqtirgan tabassum bilan uylaning.</p>
+                         <h4>Sizning yangi tabassumingiz</h4>
+                         <p>Ekspertlar tomonidan davolanish oling va o'zingiz yoqtirgan tabassum bilan uylaning.</p>
                     </div>
                 </div>
             </div>
@@ -281,9 +281,9 @@
         <section id="gallery" class="bg-light">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
-<span class="section-tag reveal rev-scale" data-i18n="gallery-tag">Bizning natijalar</span>
-                     <h2 class="section-title reveal rev-scale stagger-1" data-i18n="gallery-title">Tabassum o'zgarishi</h2>
-                     <p class="section-subtitle" style="margin: 0 auto;" data-i18n="gallery-subtitle">Bemorlarimizning haqiqiy natijalari.</p>
+<span class="section-tag reveal rev-scale">Bizning natijalar</span>
+                     <h2 class="section-title reveal rev-scale stagger-1">Tabassum o'zgarishi</h2>
+                     <p class="section-subtitle" style="margin: 0 auto;">Bemorlarimizning haqiqiy natijalari.</p>
                 </div>
                 <div class="gallery-grid">
                     <!-- Dynamic gallery images from GalleryImage model -->
@@ -325,8 +325,8 @@
         <section id="testimonials" class="testimonials">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
-<span class="section-tag reveal rev-flip" data-i18n="testi-tag">Sharhlar</span>
-                     <h2 class="section-title reveal rev-flip stagger-1" data-i18n="testi-title">Bemorlarimiz nima deyishadi</h2>
+<span class="section-tag reveal rev-flip">Sharhlar</span>
+                     <h2 class="section-title reveal rev-flip stagger-1">Bemorlarimiz nima deyishadi</h2>
                 </div>
                 <div class="testimonial-grid">
                     <!-- Dynamic testimonial cards from Testimonial model -->
@@ -407,8 +407,8 @@
         <section id="team">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
-<span class="section-tag reveal rev-slide-up" data-i18n="team-tag">Ekspertlar jamoasi</span>
-                     <h2 class="section-title reveal rev-slide-up stagger-1" data-i18n="team-title">Mutaxassislarimiz bilan tanishing</h2>
+<span class="section-tag reveal rev-slide-up">Ekspertlar jamoasi</span>
+                     <h2 class="section-title reveal rev-slide-up stagger-1">Mutaxassislarimiz bilan tanishing</h2>
                 </div>
                 <div class="team-grid">
                     <!-- Dynamic doctor cards from Doctor model -->
@@ -463,9 +463,9 @@
                 <div class="dot" style="width: 6px; height: 6px; bottom: 20%; right: 15%; background: white; animation-duration: 7s;"></div>
             </div>
             <div class="container reveal rev-scale">
-<h2 data-i18n="cta-title">Tabassingizni o'zgartirishga tayyormisiz?</h2>
-                 <p data-i18n="cta-subtitle">Bugun bepul konsultatsiyaga yoziling va o'zingizga munosib tabassumga birinchi qadam tashlang.</p>
-                 <button class="btn btn-white floating-btn open-modal" data-i18n="cta-btn">Bepul konsultatsiyaga yozilish</button>
+<h2>Tabassingizni o'zgartirishga tayyormisiz?</h2>
+                 <p>Bugun bepul konsultatsiyaga yoziling va o'zingizga munosib tabassumga birinchi qadam tashlang.</p>
+                 <button class="btn btn-white floating-btn open-modal">Bepul konsultatsiyaga yozilish</button>
             </div>
         </section>
 
@@ -473,8 +473,8 @@
         <section id="contact">
             <div class="container">
                 <div class="contact-header" style="text-align: center; margin-bottom: 50px;">
-<span class="section-tag" data-i18n="contact-tag">Bizga tashrif buyuring</span>
-                     <h2 class="section-title" data-i18n="contact-title">Klinikamizga tashrif buyuring</h2>
+<span class="section-tag">Bizga tashrif buyuring</span>
+                     <h2 class="section-title">Klinikamizga tashrif buyuring</h2>
                 </div>
                 <div class="contact-grid-simple">
                     <!-- Dynamic contact info from ClinicInfo model -->
@@ -524,7 +524,7 @@
                 <div>
                     <!-- Dynamic clinic name and logo in footer -->
                     <a href="#" class="footer-logo">🦷 {% if clinic_info %}{{ clinic_info.clinic_name }}{% else %}BrightSmile <span>Stomatologiya</span>{% endif %}</a>
-                    <p class="footer-text" data-i18n="footer-desc">Zamonaviy texnologiyalar va g'amkashlik bilan birinchi darajali stomatologik xizmat ko'rsatamiz. Sizning qulayligingiz — bizning ustuvor vazifamiz.</p>
+                    <p class="footer-text">Zamonaviy texnologiyalar va g'amkashlik bilan birinchi darajali stomatologik xizmat ko'rsatamiz. Sizning qulayligingiz — bizning ustuvor vazifamiz.</p>
 <!-- Dynamic social media links from ClinicInfo model -->
                      <div class="footer-social">
                          {% if clinic_info and clinic_info.instagram_url %}
@@ -540,7 +540,7 @@
                      </div>
                 </div>
                 <div class="footer-links">
-<h4 data-i18n="footer-links-title">Tezkor havolalar</h4>
+<h4>Tezkor havolalar</h4>
                      <ul>
                          <li><a href="#home">Bosh sahifa</a></li>
                          <li><a href="#about">Biz haqimizda</a></li>
@@ -550,7 +550,7 @@
                      </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer-services-title">Bizning xizmatlar</h4>
+                    <h4>Bizning xizmatlar</h4>
                     <ul>
                         <!-- Dynamic service links from Service model in footer -->
                         {% for service in services %}
@@ -576,8 +576,8 @@
             <div class="close-modal">&times;</div>
 
             <div id="modal-form-content">
-<h2 class="modal-title" data-i18n="modal-title">Qabulga yozilish</h2>
-                 <p class="modal-subtitle" data-i18n="modal-subtitle">Ma'lumotlarni to'ldiring va biz 1 soat ichida siz bilan bog'lanamiz</p>
+<h2 class="modal-title">Qabulga yozilish</h2>
+                 <p class="modal-subtitle">Ma'lumotlarni to'ldiring va biz 1 soat ichida siz bilan bog'lanamiz</p>
 
                 <!-- Appointment form with id="appointmentForm" for JavaScript interception -->
                 <form id="appointmentForm">

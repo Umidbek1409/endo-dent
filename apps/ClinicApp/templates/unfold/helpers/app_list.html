@@ -1,4 +1,4 @@
-{% load i18n unfold %}
+{% load unfold %}
 
 {% if sidebar_navigation %}
     <div id="nav-sidebar-apps" class="h-0 grow overflow-auto" data-simplebar>
@@ -50,7 +50,6 @@
     </div>
 {% else %}
     <p>
-        {% trans "You don't have permission to view or edit anything." as error_message %}
-        {% include "unfold/helpers/messages/error.html" with error=error_message %}
+        {% include "unfold/helpers/messages/error.html" with error="You don't have permission to view or edit anything." %}
     </p>
 {% endif %}

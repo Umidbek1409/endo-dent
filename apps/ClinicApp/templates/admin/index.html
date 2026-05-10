@@ -5,10 +5,9 @@
     Uses Unfold's built-in Tailwind CSS classes — no custom CSS needed.
 -->
 {% extends "unfold/layouts/base.html" %}
-{% load i18n %}
 
 {% block title %}
-    {% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}
+    {% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:'Django site admin' }}
 {% endblock %}
 
 {% block branding %}
@@ -21,10 +20,10 @@
     <!-- ── Dashboard Title ── -->
     <div>
         <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100">
-            {% trans "Welcome to" %} {{ site_header }}
+            Welcome to {{ site_header }}
         </h1>
         <p class="text-gray-500 dark:text-gray-400 mt-1">
-            {% trans "Here's what's happening with your clinic today." %}
+            Here's what's happening with your clinic today.
         </p>
     </div>
 
@@ -36,7 +35,7 @@
             <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-3xl text-primary-500">calendar_month</span>
                 <div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{% trans "Total Appointments" %}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Total Appointments</p>
                     <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ total_appointments|default:"0" }}</p>
                 </div>
             </div>
@@ -47,7 +46,7 @@
             <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-3xl {% if unread_appointments > 0 %}text-blue-500{% else %}text-gray-400{% endif %}">notifications_active</span>
                 <div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{% trans "Unread Appointments" %}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Unread Appointments</p>
                     <p class="text-3xl font-bold {% if unread_appointments > 0 %}text-blue-600 dark:text-blue-400{% else %}text-gray-900 dark:text-gray-100{% endif %}">{{ unread_appointments|default:"0" }}</p>
                 </div>
             </div>
@@ -58,7 +57,7 @@
             <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-3xl text-green-500">stethoscope</span>
                 <div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{% trans "Total Doctors" %}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Total Doctors</p>
                     <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ total_doctors|default:"0" }}</p>
                 </div>
             </div>
@@ -69,7 +68,7 @@
             <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-3xl text-amber-500">medical_services</span>
                 <div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{% trans "Total Services" %}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Total Services</p>
                     <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ total_services|default:"0" }}</p>
                 </div>
             </div>
@@ -80,7 +79,7 @@
     <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm">
         <div class="px-5 py-4 border-b border-gray-200 dark:border-gray-700">
             <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                {% trans "Recent Appointments" %}
+                Recent Appointments
             </h2>
         </div>
 
@@ -89,11 +88,11 @@
             <table class="w-full text-sm">
                 <thead>
                     <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Patient Name" %}</th>
-                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Phone" %}</th>
-                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Service" %}</th>
-                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Date" %}</th>
-                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">{% trans "Status" %}</th>
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">Patient Name</th>
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">Phone</th>
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">Service</th>
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">Date</th>
+                        <th class="text-left px-5 py-3 font-semibold text-gray-600 dark:text-gray-400">Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -108,11 +107,11 @@
                         <td class="px-5 py-3">
                             {% if appt.is_read %}
                             <span class="font-semibold px-2 py-0.5 rounded text-xs bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400">
-                                {% trans "Read" %}
+                                Read
                             </span>
                             {% else %}
                             <span class="font-semibold px-2 py-0.5 rounded text-xs bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400">
-                                {% trans "Unread" %}
+                                Unread
                             </span>
                             {% endif %}
                         </td>
@@ -124,7 +123,7 @@
         {% else %}
         <div class="px-5 py-12 text-center">
             <span class="material-symbols-outlined text-5xl text-gray-300 dark:text-gray-600">event_busy</span>
-            <p class="text-gray-500 dark:text-gray-400 mt-3">{% trans "No appointments yet." %}</p>
+            <p class="text-gray-500 dark:text-gray-400 mt-3">No appointments yet.</p>
         </div>
         {% endif %}
 
@@ -132,7 +131,7 @@
         {% if recent_appointments %}
         <div class="px-5 py-3 border-t border-gray-200 dark:border-gray-700">
             <a href="{% url 'admin:ClinicApp_appointment_changelist' %}" class="text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
-                {% trans "View all appointments" %} →
+                View all appointments →
             </a>
         </div>
         {% endif %}
@@ -142,33 +141,33 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <a href="{% url 'admin:ClinicApp_clinicinfo_changelist' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex items-center gap-3">
             <span class="material-symbols-outlined text-primary-500">info</span>
-            <span class="font-medium text-gray-900 dark:text-gray-100">{% trans "Edit Clinic Info" %}</span>
+            <span class="font-medium text-gray-900 dark:text-gray-100">Edit Clinic Info</span>
         </a>
         <a href="{% url 'admin:ClinicApp_service_changelist' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex items-center gap-3">
             <span class="material-symbols-outlined text-primary-500">medical_services</span>
-            <span class="font-medium text-gray-900 dark:text-gray-100">{% trans "Manage Services" %}</span>
+            <span class="font-medium text-gray-900 dark:text-gray-100">Manage Services</span>
         </a>
     </div>
 
     <!-- ── Quick Add Section (Mobile Friendly) ── -->
     <div>
-        <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">{% trans "Quick Add" %}</h2>
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">Quick Add</h2>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             <a href="{% url 'admin:ClinicApp_service_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
                 <span class="material-symbols-outlined text-primary-500 text-2xl">medical_services</span>
-                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add Service" %}</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">Add Service</span>
             </a>
             <a href="{% url 'admin:ClinicApp_doctor_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
                 <span class="material-symbols-outlined text-primary-500 text-2xl">person_add</span>
-                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add Doctor" %}</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">Add Doctor</span>
             </a>
             <a href="{% url 'admin:ClinicApp_testimonial_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
                 <span class="material-symbols-outlined text-primary-500 text-2xl">rate_review</span>
-                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add Review" %}</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">Add Review</span>
             </a>
             <a href="{% url 'admin:ClinicApp_galleryimage_add' %}" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-300 dark:hover:border-primary-700 transition-colors flex flex-col items-center gap-2 text-center">
                 <span class="material-symbols-outlined text-primary-500 text-2xl">add_photo_alternate</span>
-                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">{% trans "Add Photo" %}</span>
+                <span class="font-medium text-gray-900 dark:text-gray-100 text-sm">Add Photo</span>
             </a>
         </div>
     </div>
