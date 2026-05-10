@@ -1,68 +1,20 @@
-"""
-Dental Clinic - Views
-
-This module contains view functions for the frontend and API endpoints.
-- home(): Renders the main page with all dynamic content.
-- submit_appointment(): Handles appointment form submissions via JSON API
-  and sends notifications to Telegram.
-"""
-
 import json
 import logging
 import sys
-
 import requests
 from django.core.exceptions import ValidationError
 from django.http import JsonResponse
-from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
-
-from .models import (
-    HeroSection,
-    Service,
-    Doctor,
-    Testimonial,
-    GalleryImage,
-    ClinicInfo,
-    Appointment,
-)
+from ..models import Service, ClinicInfo, Appointment
 
 logger = logging.getLogger(__name__)
-
-
-def home(request):
-    """
-    Main homepage view.
-    Queries all visible/active content from every model and passes it
-    as context to the template for rendering.
-    """
-    clinic_info = ClinicInfo.objects.first()
-    hero = HeroSection.objects.filter(is_active=True).first()
-    services = Service.objects.filter(is_visible=True)
-    doctors = Doctor.objects.filter(is_visible=True)
-    testimonials = Testimonial.objects.filter(is_visible=True)
-    gallery_images = GalleryImage.objects.filter(is_visible=True)
-
-    context = {
-        'clinic_info': clinic_info,
-        'hero': hero,
-        'services': services,
-        'doctors': doctors,
-        'testimonials': testimonials,
-        'gallery_images': gallery_images,
-    }
-    return render(request, 'ClinicAppTemplates/index.html', context)
-
 
 @csrf_exempt
 @require_POST
 def submit_appointment(request):
     """
     API endpoint to handle appointment form submissions.
-    Accepts JSON POST data, validates required fields, saves to the database,
-    and sends a notification to Telegram.
-    Returns JSON response with success or error status.
     """
     try:
         data = json.loads(request.body)
@@ -75,7 +27,7 @@ def submit_appointment(request):
         if not phone:
             return JsonResponse({'success': False, 'error': 'Phone number is required'})
 
-        # Handle preferred_date: convert to date object or None
+        # Handle preferred_date
         preferred_date = None
         date_raw = data.get('preferred_date')
         if date_raw and isinstance(date_raw, str):
@@ -106,8 +58,7 @@ def submit_appointment(request):
         if not message:
             message = ''
 
-        
-        # Create appointment with explicit fields
+        # Create appointment
         try:
             appointment = Appointment.objects.create(
                 full_name=full_name,
