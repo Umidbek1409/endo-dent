@@ -298,22 +298,6 @@ alert("Tarmoq xatoligi. Ulanishni tekshiring va qaytadan urinib ko'ring.");
 
 
 // ─────────────────────────────────────────────
-// PARTNERS ANIMATION DURATION
-// ─────────────────────────────────────────────
-// Calculates and sets the animation duration for the partner logo marquee
-// based on the width of the scrollable content.
-function setPartnersAnimationDuration() {
-    const track = document.querySelector('.partners-scroll');
-    if (!track) return;
-    const oneLoopWidth = track.scrollWidth / 2;
-    if (!oneLoopWidth || !Number.isFinite(oneLoopWidth)) return;
-    const pxPerSecond = 80;
-    const duration = Math.max(12, oneLoopWidth / pxPerSecond);
-    track.style.setProperty('--partners-duration', `${duration}s`);
-}
-
-
-// ─────────────────────────────────────────────
 // CONFETTI CELEBRATION
 // ─────────────────────────────────────────────
 // Creates a burst of colorful confetti particles for the success animation.
